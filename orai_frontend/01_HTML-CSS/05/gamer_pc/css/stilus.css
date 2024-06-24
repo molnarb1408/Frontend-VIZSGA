@@ -1,0 +1,133 @@
+body {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    background-image: url("../kepek/hatter.jpg");
+}
+
+main {
+    background-color: #ffffff;
+    text-align: justify;
+    padding: 70px;
+}
+
+h1 {
+    color: #0066cc;
+}
+
+h2 {
+    padding-top: 20px;
+    color:#3399ff;
+    text-decoration: underline;
+}
+
+p {
+    font-size:18px;
+}
+
+p.gamer-pc-detail {
+    font-size: 20px;
+}
+
+.img-header {
+    width: 100%;
+}
+
+img.img-gamer-pc-float-right {
+    float: right;
+    margin-left: 20px;
+    height: 263px;
+    margin-bottom: 10px;
+}
+
+img.img-gamer-pc-float-left {
+    float: left;
+    margin-right: 20px;
+    height: 197px;
+    margin-bottom: 10px;
+}
+
+img.img-gamer-arena {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+}
+
+/* csak 1 hivatkozás van az oldalon */
+/* minden hivatkozást kijelöl */
+/*a {
+}*/
+
+/** komplexebb szelektor (kijelölő) */
+/* a link-container-en belül (csak div lehet) hivatkozok a pc-guru-link-re (ami csak anchor lehet) */
+div.link-container>a.pc-guru-link {
+    text-decoration: none;
+    color: green;
+}
+
+div.link-container {
+    margin-top: 30px;
+}
+
+/********* h3 Ajánlott alaplapok színezés - 1. megoldás *****************/
+/*
+h3 {
+    background-color: green;
+    color: white;
+    width: fit-content;
+}
+*/
+
+/********* h3 Ajánlott alaplapok színezés - 2. megoldás *****************/
+/*
+h3.motherboard-recomended-h3 {
+    background-color: green;
+    color: white;
+    display: inline-block;
+}
+*/
+
+/********* h3 Ajánlott alaplapok színezés - 3. megoldás *****************/
+/* span -tároló elem, kivül állhat az öröklödési láncolaton- egyedi formázás használható */
+span.h3-green-bg {
+    background-color: green;
+    color: white;
+    padding: 7px;
+} 
+
+ol.motherboard-list {
+    list-style-type: upper-roman;
+}
+
+ul.motherboard-ul {
+    list-style-type: square;
+}
+
+/* kijelöli az ul minden li szülötte*/
+/*ul>li {
+
+}*/
+/* kijelöli az ol minden li szülötte*/
+/*ol>li {
+
+}*/
+
+/***** css emelt szint: pszeudó osztályok használata *****/
+/* az ul-ből az első li kijelőlése */
+/*ul>li:first-child {
+}
+*/
+
+/********* Class név megadások szabályai (konvenciók): *****************/
+/*
+kebab-case - kötőjellel kell megadni az összetett szavaknal (angol)    
+img-background-header {}
+background-image-header{}
+
+btn-save{} mentés gomb
+img-container{}
+container-fluid{}
+div-main-container{}
+*/
+

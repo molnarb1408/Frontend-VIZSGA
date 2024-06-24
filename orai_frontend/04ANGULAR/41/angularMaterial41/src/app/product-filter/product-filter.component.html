@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="filter-toolbar">
+        <mat-form-field>
+            <input type="number" matInput placeholder="Id szűrés" [(ngModel)]="SearchId" (ngModelChange)="applyFilter()">
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Név szűrés" [(ngModel)]="SearchName" (ngModelChange)="applyFilter()">
+        </mat-form-field>
+        <mat-form-field>
+            <input type="number" matInput placeholder="Ár szűrés" [(ngModel)]="SearchPrice" (ngModelChange)="applyFilter()">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-select placeholder="Kategória szűrés" [(ngModel)]="SearchCategory" (ngModelChange)="applyFilter()">
+                <mat-option value="">Összes</mat-option>
+                <mat-option *ngFor="let Category of Categories" [value]="Category">{{Category}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <table mat-table [dataSource]="FilteredProducts">
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef>Id 
+            </mat-header-cell>
+            <mat-cell *matCellDef="let product">{{product.id}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Név
+            </mat-header-cell>
+            <mat-cell *matCellDef="let product">{{product.name}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="price">
+            <mat-header-cell *matHeaderCellDef>Ár 
+            </mat-header-cell>
+            <mat-cell *matCellDef="let product">{{product.price}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="category">
+            <mat-header-cell *matHeaderCellDef>Kategória
+            </mat-header-cell>
+            <mat-cell *matCellDef="let product">{{product.category}}</mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="DisplayedColumns">
+        </mat-header-row>
+        <mat-row *matRowDef ="let row;columns:DisplayedColumns;">
+        </mat-row>
+    </table>
+</div>

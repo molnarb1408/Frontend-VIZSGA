@@ -1,0 +1,41 @@
+<div class="container">
+    <h2 class="text-center mat-headline-2">Termék felvitel</h2>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <input type="text" matInput formControlName="name" placeholder="Név: min 3, max. 20 karakter">
+            <mat-error *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.dirty || productForm.get('name')?.touched">
+            <ng-container *ngIf="productForm.get('name')?.errors?.['required']">A terméknév kötelező mező!!!</ng-container>  
+            <ng-container *ngIf="productForm.get('name')?.errors?.['minlength']">A terméknév kötelezően min. 3 karakter!!!</ng-container> 
+            <ng-container *ngIf="productForm.get('name')?.errors?.['maxlength']">A terméknév kötelezően max. 20 karakter!!!</ng-container> 
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput formControlName="manufacturer" placeholder="Gyártónév: min 2, max. 50 karakter">
+            <mat-error *ngIf="productForm.get('manufacturer')?.invalid && productForm.get('manufacturer')?.dirty || productForm.get('manufacturer')?.touched">
+            <ng-container *ngIf="productForm.get('manufacturer')?.errors?.['required']">A gyártónév kötelező mező!!!</ng-container>  
+            <ng-container *ngIf="productForm.get('manufacturer')?.errors?.['minlength']">A gyártónév kötelezően min. 2 karakter!!!</ng-container> 
+            <ng-container *ngIf="productForm.get('manufacturer')?.errors?.['maxlength']">A terméknév kötelezően max. 50 karakter!!!</ng-container> 
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="number" matInput formControlName="price" placeholder="Ár: min 0, max. 3000000 Ft">
+            <mat-error *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.dirty || productForm.get('price')?.touched">
+            <ng-container *ngIf="productForm.get('price')?.errors?.['required']">Az ár kötelező mező!!!</ng-container>  
+            <ng-container *ngIf="productForm.get('price')?.errors?.['min']">A ár min. értéke 0!!!</ng-container> 
+            <ng-container *ngIf="productForm.get('price')?.errors?.['max']">A ár max. értéke 3000000!!!</ng-container> 
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>ÁFA</mat-label>
+            <mat-select formControlName="vat">  
+                <mat-option *ngFor="let vat of vatOptions" [value] = "vat">{{vat}}%</mat-option>
+           </mat-select>
+            <mat-error *ngIf="productForm.get('vat')?.invalid && productForm.get('vat')?.dirty || productForm.get('vat')?.touched">
+            <ng-container *ngIf="productForm.get('vat')?.errors?.['required']">Az ÁFA kötelező mező!!!</ng-container>  
+            </mat-error>
+        </mat-form-field>
+        <mat-checkbox formControlName="status">Elérhető</mat-checkbox>
+        <button mat-raised-button color="primary" type="submit">MENTÉS</button>
+    </form>
+</div>
+

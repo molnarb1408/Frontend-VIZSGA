@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operátorok</title>
+</head>
+<body>
+    <script>
+        /* 
+        Operátorok: műveletvégző jelek
+        operandus: amin végezzük a műveleteket
+        sum = a + b 
+        operandusok: sum, a, b
+        operátorok: + =    
+        */
+        /******************** Értékadó operátor = ***************************/
+        //balérték - jobb érték : left value, right value
+        //bal oldalon álló változó veszi fel a jobboldalon álló értékét
+        var a = 10;
+        var b = 12;
+        var a = b;
+        console.log("a változó értéke: " + a); //12 (10 érték elveszik)
+    
+        /******************** Matematikai operátorok ***************************/
+        // + - * / (más nyelvekben egész osztást jelenti, js osztást)  % (MOD)
+        var a = 11;
+        var b = 2;
+        var sum = a + b;
+        console.log("sum változó értéke: " + sum); //13
+        var difference = a - b;
+        console.log("difference változó értéke: " + difference); //9
+        console.log("szorzaza: " + a*b); //22
+        var divide = a / b;
+        console.log("hányados: " + divide); // 5.5 (nyelvenként eltér, hogy mivel tér vissza)
+        // egész szám osztása egész számmal: java, c# 5-tel tér vissza - adatvesztés kasztolás nélkül
+        // JS-ben nincs double vagy float, a numberen belül a törtszám is megtalálható, ezért 5.5
+
+        // MODULO (MOD) % - maradékképzés
+        var modulo = a%b; //11%2
+        console.log(a + " MODULO: "+b +"=" + modulo); //1
+        console.log(10 + " MODULO: "+2 +"=" + (10%2));//0
+        console.log(9+ " MODULO: "+3 +"=" + (9%3));//0
+        console.log(5 + " MODULO: "+7 +"=" + (5%7));//5
+        console.log(7 + " MODULO: "+2 +"=" + (7%2));//1
+
+        /*************************************************************/
+        var number = 5;
+        var numberNegative = -number;
+        console.log("numberNegativ: " +numberNegative); -5
+
+        /*************************************************************/
+
+        /********************** JS MAGIC ****************************/
+        var divideTest1 = 3 / 0;
+        console.log("3/0 eredménye (0-val való osztás: ): "+divideTest1); //Infinity - nem dob hibát
+
+        var divideTest2 = -3 / 0;
+        console.log("-3/0 eredménye (0-val való osztás: ): "+divideTest2); //-Infinity - nem dob hibát
+
+        var divideTest3 = 0 / 0;
+        console.log("0/0 eredménye (0-val való osztás: ): "+divideTest3); //NaN
+
+        var divideTest4 = 0 / 3;
+        console.log("0/3 eredménye (0-t osztom 3-mal: ): "+divideTest4); //0
+
+        /********* értéknövelés (increment) ++/értékcsökkentés(decrement) --***********/
+        //prefix ++i, postfix i++ (leggyakrabban így használjuk)
+        var number = 7;
+        console.log(++number); //8 - prefix: elöször megnöveli, majd kiírja
+        console.log(number++); //8 - postfix: elöször kiírja, majd megnöveli
+        console.log(number); //9 - mert az előtte lévő sorban megnöveltük az értékét 1-el
+
+        /*********** Relációs (összehasonlító) operátorok *************/
+        // < > <= >= == != === !== (tipust is ellenőrzi az utolsó 2)
+        // boolean tipussal tér vissza
+        // elágazásoknál a feltételnél használjuk leggyakrabban
+        // if (szam>10){
+
+        // }
+
+        //console.log(5=>10); //hibás szintakszis
+        console.log(5 >= 10); //helyes szintakszis - false
+        console.log(5 >= 5); //true
+        console.log(5 <= 7); //true
+        console.log("5==5: " + (5 == "5")); //true - nem nézi a típust (gyengén típusossága az oka) - "5" -5*5 =25 (erősen tipusos nyelveknél hibára futna)
+        console.log("5===5: " + (5 === "5")); //false, mert a 2. adat szöveges
+        console.log("5!==5: " + (5 !== "5")); //true, mert vagy a tipus (ez áll fenn itt) vagy az érték nem egyezik
+        console.log("5!==6: " + (5 !== 6)); //true, itt a tipus egyezik, az érték nem      
+        console.log("5!=5: " + (5 != 5)); //false, mert egyenlő vele
+        console.log(false == 0); //true
+        console.log(true == 1); //true
+        console.log(true == 0); //false
+        console.log(true === 1); //false, mert a tipusa nem egyezik (mert boolean)
+
+        //TOP5 kezdő programozó hiba = és == felcserélése
+        // elágazásban == vagy ===
+        // if (szam1=szam2){} - nagy HIBA
+        // értékadásnál =
+
+        /************************ Logikai operátorok ***********************/
+        // Bool algebra szabályai
+        // AND -ÉS (&&) - altgr+c
+        // OR - VAGY (||) - altgr+w
+        // NEGÁLÁS - TAGADÁS (!)
+        var a = true; //boolean tipust kap
+        var b = false;
+        console.log("a és b művelet: " + (a && b)); //false
+        console.log("a vagy b művelet: " + (a || b)); //true
+        console.log("a tagadása: " + !a); //false
+        console.log(a && b || a); //true
+        console.log(a || (b && a)); //true
+
+        //rövid zár - Short-circuit evaluation
+        //true && true && false && true && true - utolsó 2-t már nem ellenőrzi, mert false a 3. - kimenete false
+        //false || false || true || false || false - utolsó 2-t már nem ellenőrzi, mert true a 3. - kimenete true
+
+        var isRegistered = true;
+        var isNewsletterSigned = true;
+        console.log("Küldjünk hírlevelet: " + (isRegistered && isNewsletterSigned)); //true
+        //    if (isRegistered && isNewsletterSigned){
+        //         sendNewsletter();
+        //    }
+        var number = 12;
+        console.log("2-vel és 3-mal osztható: " + (number % 2 == 0 && number % 3 == 0)); //true
+        // console.log("2-vel és 3-mal osztható: "+(szam%2==0 && %3==0)); //Hibás szintakszis
+        // eltérés a beszélt nyelv és a programnyelv között 
+
+        /********* Azonos műveletvégző jel - más-más működés ***************/
+        // + műveletvégző jel összefűzést jelent - concat
+        var textBegin = "Hello";
+        var textEnd = "World";
+        var text = textBegin + ", "+textEnd + "!"; 
+        console.log(text);
+        // + számoknál összeadja
+
+        /******************* operátorok rövídítések *******************/
+        let sum = 0;
+        sum +=2; //sum = sum + 2;
+        // -= *= /=
+        console.log("sum változó értéke: "+sum); //2
+
+        /************ speciális szintakszis - JS MAGIC *********************/
+        var number = (1+2, 3+4); // 1+2 ignorálja
+        console.log("szám értéke: "+number); //7
+
+        /****************** operátorok sorrendisége (precedenciája) ************/
+        // matematika szabályai érvényesek 
+        // * / magasabb rendű, mint a + - 
+        // zárójeleket érdemes használni!!!
+    </script>
+</body>
+</html>

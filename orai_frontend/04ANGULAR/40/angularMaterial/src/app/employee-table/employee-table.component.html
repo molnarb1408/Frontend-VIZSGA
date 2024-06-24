@@ -1,0 +1,58 @@
+<div class="container">
+    <h1 class="text-center">Összes dolgozó</h1>
+    <table mat-table [dataSource]="Employees">
+        <tbody>
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef>Név</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.name}}</mat-cell> 
+            </ng-container>
+            <ng-container matColumnDef="role">
+                <mat-header-cell *matHeaderCellDef>Beosztás</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.role}}</mat-cell> 
+            </ng-container>
+            <ng-container matColumnDef="salary">
+                <mat-header-cell *matHeaderCellDef>Fizetés</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.salary}}</mat-cell> 
+            </ng-container>
+            <ng-container matColumnDef="gender">
+                <mat-header-cell *matHeaderCellDef>Neme</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.gender}}</mat-cell> 
+            </ng-container>
+            <ng-container matColumnDef="status">
+                <mat-header-cell *matHeaderCellDef>Állapot</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.status==true ? "aktív" : "inaktív"}}</mat-cell> 
+            </ng-container>
+        </tbody>
+        <mat-header-row *matHeaderRowDef="['name', 'role', 'salary', 'gender','status']"></mat-header-row>
+        <mat-row *matRowDef = "let row;columns:['name', 'role', 'salary', 'gender','status']"></mat-row>
+    </table>
+    <hr>
+    <!-- Feladat: Listázzuk a programozók adatait táblázatban!-->
+    <h1 class="text-center">Programozók</h1>
+    <table mat-table [dataSource]="Programmers">
+        <tbody>
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef>Név</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.name}}</mat-cell> 
+            </ng-container>
+            <ng-container matColumnDef="role">
+                <mat-header-cell *matHeaderCellDef>Beosztás</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.role}}</mat-cell> 
+            </ng-container>
+            <ng-container matColumnDef="salary">
+                <mat-header-cell *matHeaderCellDef>Fizetés</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.salary}}</mat-cell> 
+            </ng-container>
+            <ng-container matColumnDef="gender">
+                <mat-header-cell *matHeaderCellDef>Neme</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.gender}}</mat-cell> 
+            </ng-container>
+            <ng-container matColumnDef="status">
+                <mat-header-cell *matHeaderCellDef>Állapot</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{row.status==true ? "aktív" : "inaktív"}}</mat-cell> 
+            </ng-container>
+        </tbody>
+        <mat-header-row *matHeaderRowDef="['name', 'role', 'salary', 'gender','status']"></mat-header-row>
+        <mat-row *matRowDef = "let row;columns:['name', 'role', 'salary', 'gender','status']"></mat-row>
+    </table>
+</div>

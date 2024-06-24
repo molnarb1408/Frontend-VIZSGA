@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do-while</title>
+</head>
+<body>
+    <script>
+        /***************** Do-while *******************************/
+        /**************** hátultesztelő ciklus *******************/
+        // Egyszer mindenképpen lefut, utána ellenőrzi a ciklusfeltételt
+        // ha igaz a feltétel, akkor új lefut, egészen addig, amig nem kap false-t
+        // a feltétel!
+        
+        // itt szerepelhet a ciklusváltozó kezdőértékadás
+        // do {
+            //ciklusmag (ide kell helyezni a ciklusváltozó léptetését)   
+        // } while (feltétel);
+        
+        //Feladat01: Addig kérek be számokat, amig 0-t nem ad meg a felhasználó.
+        console.log("Feladat01: Addig kérek be számokat, amig 0-t nem ad meg a felhasználó."); 
+        let number; //csak deklatáció (definiciónál értéket is kap)
+        do {
+            number = Number(prompt("Kérem adjon meg egy számot (0-ra kilépek):")); //definició
+        } while (number !=0);
+        // amig igaz, hogy a number nem 0, addig kérem be a számokat
+        alert("0-t adtál meg, ezért kiléptem...");   
+
+        //Feladat02: Addig kérem be a jelszót, amig nem pwd a megadott!
+        console.log("Feladat02: Addig kérem be a jelszót, amig nem pwd a megadott!"); 
+        let password; 
+        do {
+            password = prompt("Kérem adja meg a jelszót: ");
+        } while (password!="pwd");
+        // amig igaz, hogy a password nem pwd, addig kérem be a szövegeket
+        alert("Helyesen adtad meg a jelszót, ezért kiléptem...");  
+
+        //Feladat03: Dobjunk 6 oldalú kockával, amíg 6-os nem lesz!!!
+        // Írjuk ki a dobások eredményét a konzolra!    
+        console.log("Feladat03: Dobjunk 6 oldalú kockával, amíg 6-os nem lesz!!!"); 
+        let result;
+        do {
+            result = Math.floor(Math.random() * 6)+1; //lefelé kerekít 1-6 véletlen szám
+            // result = Math.floor(Math.random() * 7); //ua
+            console.log(result);
+        } while (result!=6);
+        
+        // véletlen szám 1-10 között
+        // Math.floor(Math.random() * 10) + 1;
+        //általános képlet véletlen szám generálásra
+        //Math.random() * (max - min) + min;
+        //Math.random() * (15 - 10) + 10; //10 és 15 közötti véletlen szám generálása
+    </script>
+</body>
+</html>

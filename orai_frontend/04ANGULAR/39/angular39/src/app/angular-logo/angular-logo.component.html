@@ -1,0 +1,11 @@
+<div class="container mt-5">
+    <h1>Angular Logó megjelenítése</h1>
+    <h2>Interpolation</h2>
+    <img src="{{ AngularLogoUrl}}" alt="{{AngularLogoAlt}}" title="{{AngularLogoTitle}}" height="{{PicsHeight}}">
+
+    <h2>Feladat01: Property binding-al jelenítsük meg a képet</h2>
+    <img [src]="AngularLogoUrl" [alt]="AngularLogoAlt" [title]="AngularLogoTitle" [height]="PicsHeight">
+
+    <h2>Feladat02: Képcsere - event binding segítségével gombra kattintáskor</h2>
+    <button class="btn btn-primary mt-2" (click)="changePicture()">Képcsere</button>
+</div>

@@ -1,0 +1,120 @@
+body {
+    background-color: antiquewhite;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    margin: 80px;
+}
+
+h1,
+h2 {
+    text-align: center;
+    padding: 10px;
+}
+
+h1 {
+    background-color: aquamarine;
+    margin-bottom: 40px;
+}
+
+h2 {
+    background-color: lemonchiffon;
+    color: darkblue;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+p {
+    font-size: 18px;
+    color: darkslategray;
+    line-height: 26px;
+}
+
+.dolt {
+    font-style: italic;
+}
+
+#img-google-epulet {
+    height: 180px;
+    float: right;
+    margin-left: 15px;
+}
+
+#img-google-logo {
+    width: 300px;
+    float: left;
+    margin-right: 15px;
+}
+
+#img-google-plex {
+    height: 200px;
+    float: right;
+    margin-left: 15px;
+}
+
+/**** túl általános: minden hivatkozásra érvényes *****/
+/*a {
+  
+}
+*/
+
+.a-wiki-link {
+    text-decoration: none;
+}
+
+.wiki-link {
+    font-size: 120%;
+    background-color: aquamarine;
+    font-weight: bold;
+    padding: 10px;
+    display: inline;
+}
+
+/* csak a bekezdésekre érvényes a dolt h4-es-re nem a diven belül
+/* ehhez kell a htmlben 
+<div class="nemzetkozi-piacok-italic">
+p-knél a dől kikerülhet
+és egy
+h4-es valahol
+
+/* 
+div.nemzetkozi-piacok-italic > p {
+    font-style: italic;
+}
+*/
+/****** snake_case: DB név, táblanév (PHP - régebbi kódok) ********/
+/****** camelCase: OOP nyelveknél, javasolt PHP-ban is **********/
+/****** kebab-case CSS-nél + SEO optimalizált szöveg megjelenítése *******/
+/*https://www.ruander.hu/junior-frontend-fejleszto-webfejleszto-tanfolyam.html*/
+
+#white-and-black {
+    font-style: italic !important;
+    font-family: Verdana;
+}
+
+#nemzetkozi-piac {
+    background-color: burlywood;
+    color: white;
+}
+
+/************* próba - kaszkádolt(rangsorolt) működés *********/
+/* Kaszkádolt működés alapértelmezett sorrendje: 
+    id alapú felülírta az osztályalapú-t, és mindkettőt felülírta az inline formázás
+    !important beállítással ezt az alapértelmezett sorrendet lehet változtatni
+    Sorrend: 
+    tag
+    osztályalapú
+    id
+    inline
+*/
+
+.white-and-black {
+    /* font-style: normal;*/
+    font-style: normal !important; /* így ez e beállítás lép életbe, kivéve, ha az id alapúnal nem !important*/
+    font-family: 'Courier New', Courier, monospace;
+    background-color: brown !important; /*felülírta a html-ben lévő inline-t */
+    color: white;
+}

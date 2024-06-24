@@ -1,0 +1,61 @@
+.box, .secondary-box, .primary-box {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 200px;
+  height: 100px;
+  transition: background-color 0.3s ease;
+}
+.box:hover, .secondary-box:hover, .primary-box:hover {
+  background-color: #fff;
+  color: #3498db;
+}
+
+.primary-box {
+  background-color: #3498db;
+}
+
+.secondary-box {
+  background-color: #2ecc71;
+}
+
+.sub-heading, .main-heading {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.main-heading {
+  color: #3498db;
+}
+
+.sub-heading {
+  color: #2ecc71;
+}
+
+footer {
+  text-align: center;
+  font-size: 26px;
+}
+
+footer {
+  margin-top: 20px;
+  background-color: #217dbb;
+  min-height: 200px;
+  padding-top: 30px;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .box, .primary-box, .secondary-box {
+    width: 100%;
+  }
+}
+.box, .primary-box, .secondary-box {
+  border-radius: 10px;
+}
+
+.primary-box {
+  box-shadow: 5px 5px 10px rgba(52, 152, 219, 0.5);
+}
+
+/*# sourceMappingURL=output.css.map */

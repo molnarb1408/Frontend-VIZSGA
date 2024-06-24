@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document.write() veszélyei</title>
+</head>
+<!-- Figyelem: document.write() az oldal betöltödése után kerül végrehajtásra!
+        Nem megfelelő csomópontra helyezi el a tartalmat!
+        DOM betöltödés után a document.write() utasításra a böngésző újraépíti a DOM fát!
+     -->
+<!-- document.write()-t ne használjuk!!!! -->
+
+<body>
+    <p>Néhány mp múlva törlöm a tartalmat...</p>
+    <h1>Ez az oldalam</h1>
+    <button type="button" onclick="myFunction()">Kattints ide!</button>
+    <script>
+        setTimeout(() => document.write('<h2>Letelt az 5mp erre cserélem ki..</h2>'), 5000);
+    </script>
+    <script>
+        function myFunction() {
+            document.write("<h2>Kicseréltem a HTML tartalmát!!!</h2>")
+        }
+        //1. megoldás - alert
+        //2. megoldás - DOM manipulation - innerHTML (később részletesen)
+    </script>
+    <h3>DOM manipultion</h3>
+    <p id="demo">55</p>
+    <script>
+        document.getElementById("demo").innerHTML = 5 + 6;
+    </script>
+</body>
+
+</html>

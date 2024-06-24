@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tömb alapok</title>
+</head>
+<body>
+    <script>
+        /***********************************************************************/
+        /*********************** Tömbök használata ****************************/
+        /*********************************************************************/
+        //Eddig 1 változó 1 értéket tárolt
+        var number = 5;
+
+        // bad practice
+        // var maxHomersekletHetfo = 15;
+        // var maxHomersekletKedd = 12;
+        // var maxHomersekletSzerda = 13;
+        // Melyik nap volt a legnagyobb a hőmérséklet?
+        // Mennyi a heti átlag?
+        // Terjedelmes kód, sok elágazással, ami olvashatatlan és értelmezhetetlen.
+        // MEGOLDÁS - adatszerkezet használat - tömb (PHP és JS nagy jelentősséggel bírnak)
+
+        // Mikor használunk tömböket?
+        // Ha több adatunk van és az adatok között van kohézió, összetartó tényező
+        // Mivel több elemet tárol szükség van a tömb nevére és indexére, amikor 
+        // el akarjuk érni egy elem értékét, 0-tól indexel (mint minden normális nyelv)
+        // Több nyelvhez (java, C#) képest különbség: nem kell megadni a méretét létrehozáskor
+        // és különböző tipusokat is tárolhat.
+
+        // JS -ben Array tipus - rendezett halmaz és fontos a sorrendisége az elemeknek
+        // Array object
+    
+        // Létrehozása 1. módszer
+        let array = new Array(); // array néven létrejön egy tömb típusú változó, ami üres
+        // java és C# OOP szintakszisok beépítésre kerültek JS, de a háttérben teljes más lesz
+        // sytantical sugar (később OOP megvizsgáljuk) (construct syntax)
+
+        // Létrehozása 2. módszer - gyakrabban használt
+        let array2 = []; //array2 néven létrejön a változó
+
+        let fruits = ["alma", "körte", "barack"];
+        console.log(fruits[0]); //alma
+        console.log(fruits[1]); //körte
+        console.log(fruits[2]); //barack
+        console.log(fruits[3]); //undefined - nem meghatározott
+        // Mint korábban olyan változónál, ami létrejött, de nem kapott értéket
+        // Más nyelvekben súlyos hiba - tömb tömbcímzés
+
+        // Létrehozása 3. módszer - ua. mint a 1. módszer, csak értéket is kap - ritkábban használt
+        let fruits2 = new Array("alma", "körte", "barack");
+        console.log(fruits2[1]); //körte
+
+        // tömb elemeinek kiírása - debughoz - hibakezeléshez
+        console.log(fruits2);
+
+        // tömb méretének lekérdezése
+        console.log("A fruits tömb mérete: "+fruits.length);
+
+        // javasolt kódolási stilus - best practice
+        let vegetables = [
+            "répa",
+            "karalábé",
+            "hagyma",
+            "krumpli", //hagyjuk itt a vesszőt (könnyebben bővíthető)
+        ];
+
+        console.log(vegetables);
+
+        /*********** Néhány hasznos beépített metódus (teljesség igénye nélkül) *********************/
+        
+        //utolsó elem eltávolítása: pop()
+        vegetables.pop();
+        console.log("pop: utolsó elem eltávolítása után:")
+        console.log(vegetables);
+        
+        //elem hozáadása a végére: push()
+        vegetables.push("paprika");
+        console.log("push: elem beszúrása a végére:")
+        console.log(vegetables);
+
+        //elem eltávolítása az elejéről: shift    
+        vegetables.shift();
+        console.log("shift: első elem eltávolítása:")
+        console.log(vegetables);
+
+        //elem hozzáadása az elejére: unshift    
+        vegetables.unshift("zeller");
+        console.log("unshift: első helyre beszúrás:")
+        console.log(vegetables);
+        
+        //több elem hozzáadása az elejére, végére
+        vegetables.push("paradicsom","uborka");
+        vegetables.unshift("retek","újhagyma");
+        console.log("push, unshift: egyszerre több elem elejére és végére beszúrva:")
+        console.log(vegetables);
+
+        //Tömb bejárása for ciklussal - index-eket elérjük
+        console.log("Tömb bejárása FOR ciklussal:");
+        for(let i=0; i<vegetables.length; i++){
+            console.log(vegetables[i]);
+        }
+
+        // Tömb bejárása - JS FOR..IN (foreach - array.foreach - lentebb)
+        // nincs indexelés - azoknál a feladatoknál, ahol nem kell az index
+        console.log("Tömbbejárás FOR..IN szerkezettel:");
+        for (let key in vegetables) {
+          console.log(key + " - "+vegetables[key]); //numberikus tömb 0..7
+          // vegetables[i] - nincsen ilyen változó
+        }
+
+        // Feladatoknál: Írjuk ki a párosakat a tömbből - for..in használható
+        // Melyik indexeken vannak páros elemet a tömbben - itt már csak a for ciklus használható
+        //bad practice - rossz gyakorlat - helyette sima for ciklus használható
+        // var i = 0;
+        // for (const key in object) {
+        //     if (){
+
+        //     }
+        //     i++;
+        // }
+
+        // let fruits - CC alapján többes szám, adatszerkezet neve (Array) nem kell hogy benne legyen
+        //egyes szám fruit, többes szám fruits - adatszerkezet
+        // user vs. users
+
+        // FOREACH szerketet -  Ha nincs szükségünk az indexre, akkor használható a FOREACH
+        console.log("Tömbbejárás FOREACH szerkezettel: ");
+        fruits.forEach(fruit => {
+            console.log(fruit);
+        });
+        //fruit: átmeneti, temporálási változó: az egyes futásokkor felveszi az egy szöveges értékeket
+        //1. futásnál az alma, 2. körte, 3. barack
+        // => arrow operator: nyíl műveletvégző jel: vegyél egy-egy elemet a tömbből
+        // majd hívd meg rajta a kapcsos zárójelen belüli utasításot 
+        //console.log("fruit változó értéke:"+fruit); //fruit is not defined (mert lokális a foreach-en belül)
+        let fruit = "szilva";
+       
+        let numbers = [33,45,6,92,7,9,8];
+        numbers.forEach(number => {
+            if (number%2 == 0) {
+                alert(number);
+            }
+        });
+        console.log(numbers); //debugoláshoz
+        //toString() szöveggé alakítja
+        console.log(numbers.toString());
+        // írányitószám(szám): 1157 - kerületet szeretnénk kinyerni, könnyebb szöveggel
+
+        //String object átalakítás, típuskényszerítéssel, vizsgálattal
+        let numbers2= [1,2,3];
+        console.log(String(numbers2)); //1,2,3
+        console.log(String(numbers2)==='1,2,3'); //true (tipus és értéke is ua.)
+        console.log(numbers2==='1,2,3'); //false
+
+        // eddigiek - vektorok, csak 1d-s kiterjedése van
+       // Több dimenziós tömb - mátrix - 2D- mátrix
+       // 4X3sor-es mátrix: 4sor, 3 oszlopa
+       let matrix = [
+            [5,85,3], //1. sor -0-as index
+            [4,43,98],
+            [21,23,33],
+            [1,8,18],
+       ];
+        console.log(matrix);
+        //matrix[sorIndex][oszlopIndex]
+        console.log(matrix[1][2]); //98
+        //console.log(matrix[4][1]); //Fatal error - cannot read undefined
+        // 5.sor 2. elemére - nincs ilyen elem
+        console.log(matrix[3][0]); //1
+
+        //JS és PHP - tömbben bármilyen tipus lehet keverve (c# és javában hiba)
+        let user = [
+            "Teszt Elek",
+            33, 
+            true,
+        ];
+        console.log(user);
+    </script>
+</body>
+</html>

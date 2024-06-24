@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapcsolatfelvétel</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <fieldset>
+        <legend>
+            <h1>Kapcsolatfelvétel</h1>
+        </legend>
+        <form method="POST">
+            <label for="email">Email*:</label>
+            <input type="email" name="email" id="email" placeholder="pld. teszt@teszt.hu" required>
+            <div>
+                <input type="radio" name="isRegistered" id="registered">
+                <label for="registered">Regisztrált</label>
+            </div>
+            <div>
+                <input type="radio" name="isRegistered" id="notRegistered" checked>
+                <label for="notRegistered">Még nem regisztrált</label>
+            </div>
+            <textarea name="comment" id="comment" cols="50" rows="10" placeholder="Ide kérem adja meg az észrevételeit* (max: 150 karakter)" maxlength="150" required></textarea>
+            <input type="submit" class="btn-submit" value="küldés">
+        </form>
+    </fieldset>
+</body>
+</html>

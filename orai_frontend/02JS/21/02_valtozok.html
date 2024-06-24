@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Változók és típusok</title>
+</head>
+<body>
+    <script>
+        /*
+        var kulcsszóval hozunk létre változót
+        ECMAScript6 óta van lehetőség let kulcsszóval
+        Különbség: hatókör és elérhetőség var bárhonnan elérhető a scope-on belül, let
+        csak a blokkon belül (pld. for-on belül, lsd. ciklusok.html), var könnyen 
+        felüldeklarálható ugyanazon a néven, let-nél szintaktikai hiba
+        node.js csak "let", mi a "var és let-et is használjuk"
+        let: a böngészők mindegyike támogatja
+        const: konstans: értéke a nem változik meg
+        */
+        /* 
+            általános szabályok változónévnél:
+            Nem kezdődhet számmal, aláhuzással már igen!
+            Betű vagy aláhúzással kezdődjön!
+            Angol ABC betűit használjuk!
+            Nem szerepelhet benne szóköz, sem írásjel (pont, vessző stb.)
+            CaseSenitive -> kis és nagybetű különböző: 
+                más-más változó: UserPassword és userPassword
+            Változónév hossza nem korlátozott, de egy sorban el kell férnie,
+                így érdemes 20-25 karakter alatt maradni!
+                productCategoryAlert
+                userAccessRight
+            Legyen beszédes, fejezze ki mit tartalmaz! (CC)
+            Fogalalt szavakat (for, var, console stb.) ne használjunk!
+            var esetében csak az aktuális hatókörben (scope-ban) érhető el
+            magyarázat később a fv-eknél: fven belüli var lokális lesz, csak ott elérhető
+        */
+
+        //var var = 5; //foglalt szó, hibát ír (korábbi JS verzióban lefutott)
+        //var for = 5; //foglalt szó, hibát ír
+        // var 1_number = 5; //hibát ír, mert számmal kezdtük
+        var _1_number = 5; //engedi
+        console.log(_1_number); //5
+
+        var életkor = 33; //engedi
+        console.log("Életkor: "+életkor); //működik, de NE használjunk ékezeteket!!!
+
+        //var user age = 34; // a szóköz miatt szintakikai hibás
+        var userAge = 34; //camelCase 
+        //console.log("A felhasználó életkora: "+userage); //CaseSensitive - kisbetű/nagybetű különböző
+        //Uncaught ReferenceError: userage is not defined
+        var userAge = 35; // nem dob hibát, pedig van már ilyen változó
+        console.log("A felhasználó életkora: "+userAge); //35
+
+        let age = 28;
+        //let age = 30; // szintaktikai hibát, van már ilyen változó
+        age = 30; // definiciót engedi, de újra deklarálni az adott hatókörön (scope-on) belül nem
+        console.log("Az életkor: "+age); //30
+
+        //const - blocked scoped, ugyanúgy mint a let esetében, csak az adott blokkon belül érhető el
+        //nem lehet felülírni, az értéke a futás alatt nem változik - állandó
+
+        const userName = "johndoe";
+       // userName = "janedoe"; //hiba:Uncaught TypeError: Assignment to constant variable.
+        console.log("userName változó értéke: "+userName);
+
+        //best practice - javasolt használat: NAGYBETŰVEL
+        const APP_VERSION = "4.5.1."; // futás közben nem változhat - nagybetű + snake_case
+        const DATABASE_NAME = "db_name";
+        //Mire használjuk a konstanst?
+        // Más nyelvekben: konfigurációs beállítások, mappa/fájl elérési útvonalak
+        // JS ugyanezek + további esetek, többet használják, mert egyfajta védelmet biztosít 
+        // a változók számára
+
+        //Összegezve: váltzozók felvétele: var, let, const (+ egyik sem)
+        numberInput8 = 4; // Használata nem javasolt - bármi felülírhatja és bárhonnan elérhető - globális
+        console.log(numberInput8);
+        //Javasolt: let és const
+
+        /**************************************************************************/
+        /*************** Egyszerű típusok: number, string, boolean ***************/
+        /************************************************************************/
+
+        // nincs törtszám (float, double)
+        // number tipusban tárolunk minden számot: egész és törtet (más nyelvekben int 4byte, long 8byte)
+        var number = 5;
+        var fractionNumber = 3.52; // ponttal adjuk
+        console.log(number);
+        console.log(fractionNumber);
+        console.log("A number változó típusa: "+typeof(number)); //number
+        console.log("A fractionNumber változó típusa: "+typeof(fractionNumber)); //number
+        console.log("A fractionNumber változó típusa: "+typeof(fractionnumber)); //CaseSensitive - hiba: undefined
+
+        //számátalakítás: Number() vs parseInt()
+        var numberToConvert = "44";
+        console.log("A numberToConvert változó típusa: "+typeof(numberToConvert)); //string
+        var numberConverted1 = parseInt(numberToConvert);
+        console.log("A numberToConvert változó típusa (parseInt()): "+typeof(numberConverted1)); //number
+        var numberConverted2 = Number(numberToConvert);
+        console.log("A numberToConvert változó típusa (Number()): "+typeof(numberConverted2)); //number
+
+        var numberToConvertWithString = "343pod";
+        var numberToConvertedParseInt = parseInt(numberToConvertWithString);
+        var numberToConvertedNumber = Number(numberToConvertWithString); 
+        console.log("numberToConvertedParseInt értéke: "+numberToConvertedParseInt); //343
+        console.log("numberToConvertedNumber értéke: "+numberToConvertedNumber); ///NaN
+        // Number() nem alakítja át, nem végzi el a műveletet NaN-al tér vissza
+        // NaN: Not a Number
+        // parseInt() kevésbé szigorú, megcsinálja az átalakítást, a karaktereket kihagyja
+
+        //+ unary operator: megpróbálja számmá alakítani, ha még nem az
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unary_plus
+
+        console.log(+true); // átalakítja 1-es számmá
+        console.log(+false); 
+        console.log(typeof(+false)); //0 az értéke és number
+        console.log(+"44");
+        var unaryNumber = +"44";
+        console.log(typeof(unaryNumber)); //number
+        var unaryNumberWithString = +"343pod";
+        console.log("unaryNumberWithString értéke:"+unaryNumberWithString +"típusa: "+typeof(unaryNumberWithString)); //NaN az értéke, tipusa number
+
+    /*************************************************************************************/
+    /******************** string tipus: szöveg ******************************************/    
+    /***********************************************************************************/
+    
+    let text = "JS is the best!!!";
+    console.log("text változó tartalma (dupla aposztóffal): "+text);
+
+    let text2 = 'TS is the best!!!';
+    console.log("text változó tartalma (szimpla aposztóffal): "+text2);
+
+    let char = "a";
+    let char2 = 'b';
+    console.log("char tipusa: "+typeof(char)); //string
+    //nincs külön char tipus, csak szöveg
+    // szövegkezelő metódusokról később
+
+    /*************************************************************************************/
+    /******************** boolean tipus: logikai ****************************************/    
+    /***********************************************************************************/
+    // Bool algebra szabályai - AND -ÉS (&&),  OR - VAGY (||), NEGÁLÁS - TAGADÁS (!)
+    // Igazság táblázat 1-0
+    // Kizárólag 2 értéket vehet fel: igaz vagy hamis TRUE vagy FALSE
+
+    let statusActive = true;
+    let isActive = false; 
+    console.log("statusActive értéke: "+statusActive +", tipusa: "+typeof(statusActive)); //true - boolean
+
+    let hasAccess = false;
+
+    //CC alapján javasolt megnevezések: isRegistered, isActive, isLoggedIn, isAvailable stb. 
+    // Elágazásoknál szerepelhet feltételként
+    // if (statusActive){
+    //     //igaz ág
+    // }
+
+    // if (statusActive==true) -- nincs szükség
+    let boolTest = false;
+    let boolTestNumber = parseInt(boolTest);
+    console.log(boolTestNumber); //nem 0 lesz, hanem NaN
+    console.log(+boolTest); //unary operator: number lesz a tipusa, az értéke 0
+
+    /*************************************************************************************/
+    /******************** Speciális tipusok: undefined, null, Object ****************************/    
+    /***********************************************************************************/
+    
+    //egyszerre több változó felvétele
+    var num1, num2, num3;
+    console.log("num2 értéke: " + num2); //undefined (nem meghatározott)
+    //létre lett hozva a változó, de nem kapott értéket
+
+    //console.log(number99);Uncaught ReferenceError: number99 is not defined
+    // null tipus: üres érték, úgy viselkedik, mint számoknál a 0
+    
+    // Mit jelent?  
+    // 0 termék a raktáron - szám (number) 0
+    // nincs termék a raktáron - boolean false
+    // nem tudjuk, hogy van -e termék a raktáron - undefined
+
+    let name = "";
+    console.log("name változó értéke: "+name + ", tipusa: "+typeof(name)); //értéke: , tipusa: string
+    // nem null, nem undefined
+
+    let emptyString = null;
+    console.log("emptyString értéke: "+emptyString + ", tipusa: "+typeof(emptyString));
+    // érteke: null, tipusa: object    
+
+    // 3 értékeű logika: null, undefined, 0
+    //Feladatoknál lehetséges hibaforrás javítása - ellenőrzés
+    // if (variable != undefined && variable != null){}
+    //if (variable != NaN){} //Negáljuk, azt hogy nem szám
+
+    </script>
+</body>
+</html>

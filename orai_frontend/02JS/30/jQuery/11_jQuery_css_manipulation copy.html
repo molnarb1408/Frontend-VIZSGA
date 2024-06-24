@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <style>
+        .blue {
+            color: blue;
+            background-color: blanchedalmond;
+            font-family: Arial;
+            font-size: 30px;
+        }
+        .green{
+            color: green;
+            font-family: Verdana;
+            font-size: 26;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="test1">Ez egy teszt szöveg.... class-> test1</p>
+    <p class="test1">Ez egy másik teszt szöveg - class-> test1</p>
+    <p id="test2">Harmadik szöveg - id-> test2</p>
+    <button id="addClass">Osztályok hozzáadása elemekhez</button><br><br>
+    <button id="removeClass">Osztályok eltávolítása elemekről</button><br><br>
+    <button id="toggleClass">Osztályok toggle</button>
+
+    <!-- jQuery 3.6.4 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#addClass").click(function(){
+                $(".test1").addClass("blue");
+                $("#test2").addClass("green");
+            });
+            $("#removeClass").click(function(){
+                $(".test1").removeClass("blue");
+                $("#test2").removeClass("green");
+            });
+            $("#toggleClass").click(function(){
+                $(".test1").toggleClass("blue");
+                $("#test2").toggleClass("green");
+            });
+        });
+
+    //közvetlenül is hozzáadhatunk stilust
+    //$("p").css({"background-color": "yellow", "font-size": "200%"});
+    </script>
+</body>
+
+</html>

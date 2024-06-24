@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch-case</title>
+</head>
+<body>
+    <script>
+        /**************** Switch - case szerkezet ******************************/
+        // Többirányú elágazást valósít meg, kiváltható if-else if-else szerkezettel
+        // DE: intervallum vizsgálatra nem használható, relációkat nem kezel
+        // csak konkrét értéket (ez lehet szám vagy akár szöveg, karakter)
+        // case napSorSzam<6 : hibás szintakszis
+        // Akkor használjuk, ha kötött a lehetőségek száma: 
+        // hét napjai, hónapok, érdemjegy, dobokocka
+        // termékkategória (kevés) 1. PC 2. Notebook 3. Periféria
+
+        //Feladat01: Kérjük be számmal az érdemjegyet, majd írjuk ki szövegesen!
+        let mark = Number(prompt("Kérem adja meg az érdemjegyet (1-5):"));
+        switch (mark) {
+            case 1: alert("Elégtelen");
+                break;
+            case 2: alert("Elégséges");
+                break;
+            case 3: alert("Közepes");
+                break;
+            case 4: alert("Jó");
+                break;
+            case 5: alert("Jeles");
+                break;
+            default: alert("Hibás adatot adott meg... (1-5)")
+                break;
+        }
+        // break: kiugrik a switch-case szerkezetből és nem ellenőrzi tovább
+        // default: ha egyik ágba sem tud belemenni
+        // break-countiue utasítások - ugró utasítások, használatát érdemes végiggondolni
+        // ha el lehet kerülni, akkor ne használjuk!! CC szerint is!!!
+
+        //Feladat02: Kérjük be a nap sorszámát (1-7), majd határozzuk meg, hogy hétköznap, 
+        //vagy hétvége! Console-on vagy felugró ablakban jelenjen meg az eredmény!
+        let dayNumber = Number(prompt("Kérem adja meg a nap sorszámát (1-7): "));
+        switch (dayNumber){
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5: alert("Hétköznap"); break;
+            case 6:
+            case 7: alert("Hétvége");break;
+            default: alert("Hibás sorszámot adott meg"); break;
+        }
+
+        //Feladat03: Készítsünk menüpontokat kezelő alkalmazást: a,b,c menüpont
+        // (Írjuk ki, hogy melyik menüpontot választottuk!)Console-on vagy felugró ablakban jelenjen meg az eredmény!
+        let menuItem = prompt("Kérem válasszon menüpontot (a,b,c): ");
+        switch (menuItem) {
+            case "a": alert("A menüpontot választotta!!!");break;         
+            case "b": alert("B menüpontot választotta!!!");break;
+            case "c": alert("C menüpontot választotta!!!");break;
+            default: alert("Hibás menüpontot választott :) (a,b,c)");break;
+        }
+    </script>
+</body>
+</html>

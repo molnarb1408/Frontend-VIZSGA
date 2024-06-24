@@ -1,0 +1,71 @@
+//Sass változók - színmegádások
+$primary-color: #007bff;
+$secondary-color: #0c65b4;
+$success-color: #0eca66;
+$success-color-hover: #06994b;
+$error-color: #f55c35;
+$error-color-hover: #ec3713;
+
+//méretezések
+$container-max-width: 800px;
+$container-actual-size:200px;
+$title-font-size:18px;
+
+//Sass mixin létrehozása a változók felhasználásával
+@mixin button-styles {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    color:#fff;
+    background-color: $primary-color;
+    border:none;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover {
+        background-color: $secondary-color;
+    }
+}
+
+//Fun Fact: button_styles és button-styles ugyanaz
+/*
+.button {
+    @include button_styles;
+}
+*/
+.button {
+    @include button-styles;
+}
+
+.success-button {
+    @extend .button; // kiterjesztés: megkapja a button osztály beállításait (kiegészítheti és felül is írhatja azokat)
+    background-color: $success-color;
+    &:hover {
+        background-color: $success-color-hover;
+    }
+}
+
+.error-button {
+    @extend .button;
+    background-color: $error-color;
+    &:hover {
+        background-color: $error-color-hover;
+    }
+}
+
+//Sass függvények
+@function calculate-double-width($width){
+    @return $width*2;
+}
+
+.container {
+    max-width: $container-max-width; //max-width:800px
+    margin:0 auto;
+    width: calculate-double-width($container-actual-size); //width: 400px (200*2)
+}
+
+.title {
+    color:$primary-color;
+    font-size: $title-font-size;
+    text-align: center;
+}

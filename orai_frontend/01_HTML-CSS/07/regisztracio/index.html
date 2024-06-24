@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regisztráció</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <fieldset>
+        <legend><h1>Regisztráció</h1></legend>
+        <form method="POST">
+            <!-- érzékeny adatoknál POST kötelezően!!! -->
+            <!-- POST-ot használunk minden esetben, kivéve ha...
+            könyvjelzőben tároljuk egy korábbi keresést GET, 
+            vagy routing, útvonalkezelés-->
+            <!-- $_POST['userName'] - felhasználó által űrlapra beírt érték -->
+            <label for="userName">Felhasználónév*:</label>
+            <input type="text" name="userName" id="userName" pattern="[a-zA-Z0-9]{5,}" title="Legalább 5 betű, szám kötelező (speciális karakter nem lehet)" placeholder="Min. 5 betű, szám kötelező, spec. karakter nem lehet!!!" required>
+            <label for="email">Email*:</label>
+            <input type="email" name="email" id="email" placeholder="pld. teszt@teszt.hu" required>
+            <label for="pwd1">Jelszó*:</label>
+            <input type="password" name="pwd1" id="pwd1" pattern=".{8,}" title="Legalább 8 karakter" required>
+            <label for="pwd2">Jelszó újra*:</label>
+            <input type="password" name="pwd2" id="pwd2" pattern=".{8,}" title="Legalább 8 karakter" required>
+            <label for="lastName">Vezetéknév*:</label>
+            <input type="text" name="lastName" id="lastName" required>    
+            <label for="firstName">Keresztnév*:</label>
+            <input type="text" name="firstName" id="firstName" required> 
+            <div>
+                <input type="checkbox" name="newsLetter" id="newsLetter" checked>
+                <label for="newsLetter">Feliratkozom a hírlevélre</label>   
+            </div>
+            <div>
+                <input type="checkbox" name="condition" id="condition" required>
+                <label for="condition">Elfogadom az oldal feltételeit</label> 
+            </div>
+            <!--
+            <label for="newsLetter">
+                <input type="checkbox" name="newsLetter" id="newsLetter">
+                Elfogadom az oldal feltételeit
+            </label>
+            -->
+            <input type="submit" class="btn-submit" value="Regisztráció">
+        </form>
+    </fieldset>
+</body>
+
+</html>

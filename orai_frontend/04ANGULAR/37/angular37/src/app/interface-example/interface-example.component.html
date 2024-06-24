@@ -1,0 +1,59 @@
+<div class="container mt-5">
+    <h2>Interface Element példa</h2>
+    <!-- <p>Név: {{ employeeElement.name }}</p> private változó -->
+    <p>Név: {{ EmployeeElement.name }}</p>
+    <p>Beosztás: {{ EmployeeElement.role }}</p>
+    <p>Fizetés: {{ EmployeeElement.salary }} Ft</p>
+    <h2>Feladat01: Iterface Array példa - Dolgozói adatok megjelenítése egyenként, minden dolgozói adattal</h2>
+    <ul>
+        <li *ngFor="let Employee of Employees">
+            Név: {{ Employee.name }} , beosztása: {{ Employee.role}}, fizetés: {{ Employee.salary}} Ft
+        </li>
+    </ul>
+
+    <h2>Feladat02: Interface Array példa - Dolgozói adatok megjelenítése 1 metódussal (szöveggé összefűzve):</h2>
+    {{getAllEmployeeData()}}
+    <h2>Feladat03: Interface Array példa - Dolgozói adatok megjelenítése táblázatban - HF:</h2>
+    <!-- Hidration validáció: <thead> <tbody>, legyen szabályosan felépített html-->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Név</th>
+                <th>Beosztás</th>
+                <th>Fizetés (Ft)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let Employee of Employees">
+                <td> {{Employee.name}}</td>
+                <td> {{Employee.role}}</td>
+                <td> {{Employee.salary}}</td>
+            </tr>
+    </table>
+    <h2>Feladat04: Dolgozók 600.000 Ft feletti fizetéssél (li) - HF</h2>
+    <ul>
+        <span *ngFor="let Employee of Employees">
+            <li *ngIf="Employee.salary>600000">
+                Név: {{Employee.name}}, beosztás: {{Employee.role}}, fizetés {{Employee.salary}} Ft
+            </li>
+        </span>
+    </ul>
+    <h2>Feladat05: Listázzuk a programozók minden adatát (li) - HF:</h2>
+    <ul>
+        <span *ngFor="let Employee of Employees">
+            <li *ngIf="Employee.role.includes('programmer')">
+                Név: {{Employee.name}}, beosztás: {{Employee.role}}, fizetés {{Employee.salary}} Ft
+            </li>
+        </span>
+    </ul>
+    <h2>Feladat06: Mennyi az átlagfizetés? (p) - HF:</h2>
+    {{EmployeeAvgSalary}} Ft
+    <h2>Feladat07: Mennyi a max fizetés a cégnél, melyik dolgozó(k) keresnek a legjobban? (li) - HF:</h2>
+    <ul>
+        <span *ngFor="let Employee of Employees">
+            <li *ngIf="Employee.salary == getMaxEmployeeSalary()">
+                Név: {{Employee.name}}, beosztás: {{Employee.role}}, fizetés {{Employee.salary}} Ft
+            </li>
+        </span>
+    </ul>
+</div>

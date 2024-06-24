@@ -1,0 +1,17 @@
+<div class="container mt-5 w-25">
+    <form>
+        <h2 class="text-center">{{Title}}</h2>
+        <div class="form-control">
+            <label for="A">A oldal: </label>
+            <input type="number" class="form-control" name="A" id="A" [(ngModel)] = "A">
+            <label for="B">B oldal: </label>
+            <input type="number" class="form-control" name="B" id="B" [(ngModel)] = "B">
+            <label for="C">C oldal: </label>
+            <input type="number" class="form-control" name="C" id="C" [(ngModel)] = "C">
+            <div class="text-center">
+                <button class="btn btn-success m-2" (click)="showAlertIsDrawable()" >Számítás</button>
+            </div>
+            <p class="text-center {{ ResultClass}}">{{getIsDrawableText()}}</p>
+        </div>
+    </form>
+</div>

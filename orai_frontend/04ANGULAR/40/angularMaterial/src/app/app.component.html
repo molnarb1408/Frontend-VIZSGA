@@ -1,0 +1,9 @@
+<button mat-fab extended [matMenuTriggerFor]="menu">Menü - kérem válasszon!!!</button> 
+<mat-menu #menu="matMenu">
+  <p><a href="/home">Főoldal</a></p>
+  <p><a href="/employeeReactiveForm">Dolgozó felvitel</a></p>
+  <p><a href="/employeeTable">Dolgozó táblázat</a></p>
+</mat-menu>
+
+
+<router-outlet />

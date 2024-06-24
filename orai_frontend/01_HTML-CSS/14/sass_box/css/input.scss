@@ -1,0 +1,88 @@
+//változók 
+$main-bg-color:#3498db;
+$secondary-bg-color:#2ecc71;
+$text-color: #fff;
+
+// Mixin
+@mixin styled-box {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+// Fun Fact - alulvonással is működik
+//Érdekesség, mert 2 külön változó egyébként a nyelvekben
+// styled-box
+// stypled_box
+.box {
+    @include styled_box;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 100px;
+    transition: background-color 0.3s ease;
+    padding: 20px; //felülírja a 10px-es paddinget
+    &:hover {
+        background-color: $text-color;
+        color:$main-bg-color;
+    }
+}
+
+//extend - felülírás vagy kiegészítés
+.primary-box {
+    @extend .box;
+    background-color: $main-bg-color;
+}
+
+.secondary-box {
+    @extend .box;
+    background-color: $secondary-bg-color;
+}
+
+//Placeholder Selector (hasonló, mint a class-kijelölő, de nem fogja a css-be kigenerálni
+%heading-style {
+    font-size:24px;
+    font-weight: bold;
+}
+
+.main-heading {
+    @extend %heading-style;
+    color:$main-bg-color;
+}
+
+.sub-heading {
+    @extend %heading-style;
+    color:$secondary-bg-color;
+}
+
+%footer-style {
+    text-align: center;
+    font-size: 26px;
+}
+
+//Függvények - beépített
+footer {
+    @extend %footer-style;
+    margin-top: 20px;
+    background-color: darken($main-bg-color, 10%);
+    min-height: 200px;
+    padding-top:30px;
+    color:#fff;
+}
+
+//Media queries
+@media (max-width: 600px) {
+    .box {
+        width: 100%;
+    }
+}
+
+@function calculate-border-radius($size) {
+  @return calc($size / 2);
+}
+
+.box {
+    border-radius: calculate-border-radius(20px);
+}
+
+.primary-box {
+    box-shadow: 5px 5px 10px rgba(52,152,219,0.5);
+}

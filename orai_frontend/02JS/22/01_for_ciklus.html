@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For ciklus</title>
+</head>
+<body>
+    <script>
+        /******************* FOR ciklus - Megszámlálós ciklus *****************************/
+        // Mikor használunk ciklust?
+        // Ha egy vagy több műveletet többször szeretnénk végrehajtani.
+        // Mikor használunk for ciklust?
+        // Ha tudjuk, hogy hányszor kell ismételni.
+        // Milyen részei vannak a ciklusnak?
+        // Kezdőértékadás: let i = 0
+        // Ciklusfeltétel: i < 5
+        // Értéknövelés vagy értékcsökkentés: i++ (i-- vagy i = i + 3)
+        // Ciklusmag: console.log(i + 1); //ide írjuk az ismétlődő tevékenységet vagy tevékenységeket
+        // Példákban milyen kulcsszavak jelennek meg?
+        // Ismételd valahányszor, kérjunk be 8 db számot, kérjük be 5 felhasználó adatait
+        // intervallumvizsgálat, adatszerkezetbejárás - menjunk végig egy tömbbön
+        // Leggyakrabban használt ciklusfajta, az adatszerkezetek bejárása miatt.
+        
+        //Feladat01: Írjuk ki a számokat 1-5-ig!
+        //Megoldás01: 
+        console.log("Feladat01: Számok 1-5:");
+        console.log("Megodás - let:");
+        for (let i = 0; i < 5; i++) {
+            console.log(i + 1); //ciklusmag
+        }
+        //console.log("i értéke: "+i);//Uncaught ReferenceError: i is not defined
+        // let i=0 miatt, az i értéke lokális, csak a for cikluson belül érhető el
+        console.log("Megodás - var: ");
+        for (var i = 0; i < 5; i++) {
+            console.log(i + 1);
+        }
+        console.log("i értéke: " + i); //i értéke 5- i értéke bárhol elérhető
+
+        //Megoldás02:
+        console.log("Feladat01 - 2. megoldás");
+        for (let i = 1; i <= 5; i++) {
+            console.log(i);
+        }
+
+        console.log("Feladat01 - 3. megoldás");
+        //Megoldás03:
+        for (let i = 1; i < 6; i++) {
+            console.log(i);
+        }
+        // javasolt  for (let i = 0; i < 5; i++){}
+
+        /****************************************************************************/
+        // fv és eljárás nélkül is megoldható
+        // Feladat02: Kérjünk be egy ismétlésszámot és egy gyümülcsnevet! Írjuk ki 
+        // a konzolra(összevonja) és felugró ablakban annyiszor (összefűzve vagy külön ablakokban),
+        // amilyen értéket megadott a felhasználó! 
+        console.log("Feladat02:");
+        let repeatNumber = Number(prompt("Kérem adja meg az ismétlésszámot: "));
+        let fruitName = prompt("Kérem adja meg a gyümülcsnevet: ");
+        for (let i = 0; i < repeatNumber; i++) {
+            console.log(fruitName);
+            alert(fruitName);
+        }
+
+        // Feladat03: 10től visszafelé 1-ig írjuk ki a számokat a konzolra!
+        console.log("Feladat03:");
+        for (let i = 10; i > 0; i--) {
+            console.log(i);
+        }
+
+        // Feladat04: Kérjük be az intervallum kezdő és végértékét (pozitiv szám), majd ebben az
+        // intervallumban írjuk ki a konzolra a 3-mal és 4-gyel maradék nélkül osztható számokat!
+        // Ha nem volt olyan szám, ami megfelel a feltételnek, akkor erről tájékoztassuk a felhasználót!
+        console.log("Feladat4: intervallum, kezdő és végérték pozitív szám majd kiírás 3 és 4-el osztahtó számokat");
+        var start = Number(prompt("Kérem adja meg a kezdőértéket: "));
+        var end = Number(prompt("Kérem adja meg a végértéket: "));
+        let isNumberExsist = false;
+        if (start < end && start > 0 && end > 0) {
+            for (var i = start; i <= end; i++) {
+                if (i % 3 === 0 && i % 4 === 0) {
+                    console.log(i);
+                    isNumberExsist = true;
+                }
+            }
+        } else {
+            alert("Hibás értéket adott meg!");
+            //nem kéri be újra az értéket - do-while, while-al megoldható
+        }
+        if (!isNumberExsist) {
+            alert("Nincs olyan szám az intervallumban, ami osztható 3-mal és 4-gyel m.n.");
+        }
+
+        //vezérlési szerkezetek egymásba ágyazhatóak, akár több szinten, de 2-3 szintnél
+        // ne legyen több - CC alapján
+        // Hibás felépítés: 
+        // if (){
+        //     if (){
+        //         for(){
+        //             if(){
+        //   
+        //             }else {
+        //                 for(){
+        //                 }
+        //             }
+        //         }
+        //     }
+        // ) else {
+        //      while(){
+        //
+        //        }
+        // }
+        // ciklomatikus komplexitás: fenti kódnak magas    
+        // megoldás: függvények, eljárások használata  
+    
+        // Feladat05: Kérjük be 5 darab számot, majd külön-külön mindegyik számról,
+        // döntsük el azt, hogy osztható -e 3-mal maradék nélkül! Tömbhasználat nélkül!!!
+        // Az eredményt felugró ablakban jelenítsuk meg!
+        //CC code smell - bad pratice
+        // let szam1 = Number(prompt("Kérem adja meg egy számot: "));
+        // let szam2 = Number(prompt("Kérem adja meg egy számot: "));
+        // let szam3 = Number(prompt("Kérem adja meg egy számot: "));
+        // let szam4 = Number(prompt("Kérem adja meg egy számot: "));
+        // let szam5 = Number(prompt("Kérem adja meg egy számot: "));
+        console.log("Feladat05 megoldása: ");
+        for (var i = 0; i < 5; i++) {
+            var number = Number(prompt("Kérem, adjon meg egy számot:"));
+            if (number % 3 == 0) {
+                alert(number + " osztható 3-mal maradék nélkül!");
+            } else {
+                alert(number + " nem osztható 3-mal maradék nélkül.");
+            }
+        }
+
+        // Feladat06: 500 és 600 között írjunk ki minden 3. számot a konzolra!
+        console.log("Feladat5: 500-600 között minden harmadik szám consoleon");
+        var start = 500;
+        var end = 600;
+        var step = 3;
+        for (var i = start; i <= end; i = i + step) {
+            console.log(i);
+        }
+
+        /**************************************************************************/
+        // Speciális szintakszis: JS MAGIC
+        // Keződérték kimarad, ha előtt 0-val deklaráltam
+        let k = 0;
+        console.log("Speciális szintakszis:");
+        for (; k < 6; k++) {
+            console.log(k); //0 1 2 3 4 5
+        }
+    </script>
+    
+</body>
+</html>

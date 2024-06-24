@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <style>
+        .test {
+            color: red;
+            font-size: 20px;
+        }
+
+        .demo {
+            color: green;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="tesztSzoveg">Teszt szöveg </p>
+    <ol>
+        <li>Lista elem 1</li>
+        <li>Lista elem 2</li>
+        <li>Lista elem 3</li>
+    </ol>
+    <button id="btnAppendTxt">Szöveg hozzáfűzés</button>
+    <button id="btnAppendListItem">Lista elem hozzáadás</button><br><br>
+    <button id="btnAfter">After</button>
+    <button id="btnBefore">Before</button><br><br>
+    <p>Egyszerű bekezdés class nélkül</p>
+    <p class="test">Bekezdés1 -> class="test"</p>
+    <p class="test">Bekezdés2 -> class="test"</p>
+    <p class="demo">Bekezdés3 -> class="demo"</p>
+    <button id="btnRemove">btnRemove - test és demo class-os bekezdések</button><br><br>
+    <div id="div1" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+        Ez egy szöveg a div1 azonosítón belül.
+        <p>Ez egy bekezdés a div1 azonosítón belül.</p>
+        <p>Ez egy másik szöveg a div1 azonosítón belül.</p>
+    </div><br>
+    <button id="btnEmpty">btnEmpty</button><br><br>
+
+    <!-- jQuery 3.6.4 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        //elemek hozzáadása
+        //append() -> tartalmat szúr be a kiválasztott elem végére
+        //prepend() -> tartalmat szúr be a kiválasztott elem elejére
+        //after() -> tartalmat szúr be a kiválasztott elem elé
+        //before() -> tartalmat szúr be a kiválasztott elem mögé
+
+        //elemek eltávolítása
+        //remove() -> eltávolítja a kiválasztott elemet és gyermek elemeit
+        //empty() -> eltávolítja a kiválasztott elem gyermek elemeit
+
+        $(document).ready(function () {
+            $("#btnAppendTxt").click(function () {
+                $("#tesztSzoveg").append(" <b> - újabb szöveg</b>.");
+            });
+            $("#btnAppendListItem").click(function () {
+                $("ol").append("<li>Hozzáfűzott elem</li>");
+            });
+            $("#btnAfter").click(function () {
+                $("#tesztSzoveg").after("<b> Mögé </b>");
+            });
+
+            $("#btnBefore").click(function () {
+                $("#tesztSzoveg").before("<i> Elé </i>");
+            });
+            $("#btnRemove").click(function () {
+                $("p").remove(".test, .demo");
+            });
+            $("#btnEmpty").click(function () {
+                $("#div1").empty();
+            });
+        });
+
+    </script>
+</body>
+
+</html>

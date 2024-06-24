@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>Databinding (adatkötés) : minta oldal</h1>
+    <h2>Interpolation (egyszerű értékátadás)</h2>
+    <!-- Hibás: az author private változó -->
+    <!-- <p>Az oldal készítője: {{ author }}</p> -->
+    <p>Az oldal készítője: {{ Author }}</p>
+    <a href="{{ getAngularUrl() }}" target="_blank">Angular honlap - Interpolation</a>
+
+    <h2>Property binding (tulajdonság kötés)</h2>
+    <!-- [property]="value" tulajdonság-érék -->
+    <a [href]="getAngularUrl()" target="_blank">Angular honlap - propery binding</a> 
+
+    <h2>Event Binding (esemény kötés)</h2>
+    <!-- Bizonyos esemény bekövetkezésekor meghívok egy fv-t vagy eljárást-->
+    <div>
+        <button class="btn btn-primary m-2" (click)="sendMessage()"> Event Binding - üzenet küldés</button>
+        <button class="btn btn-warning m-2" (click)="changeAuthor()"> Event Binding - készítő módosítás</button>
+    </div>
+
+    <h2>Two way Data Binding - Kétirányú Adatkötés</h2>
+    <form>
+        <label for="aSide">A oldal:</label>
+        <input type="number" [(ngModel)]="ASide" name="aSide" id="aSide" class="form-control">
+    </form>
+    <p>A négyzet oldalának mérete (interpolációval): {{ ASide}}</p>
+    <p>A négyzet kerülete: {{ASide*4 }}</p>
+    <p>A négyzet területe(javasolt - számításnak TS-ben a helye): {{ getArea() }} </p>
+</div>
+

@@ -1,0 +1,21 @@
+input {
+    display: block;
+    font-size: 120%;
+    margin-bottom: 10px;
+}
+
+fieldset {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label {
+    font-size: 130%;
+}
+
+.inputFormatDescription {
+    font-size: 80%;
+    color: gray;
+    font-style: italic;
+}

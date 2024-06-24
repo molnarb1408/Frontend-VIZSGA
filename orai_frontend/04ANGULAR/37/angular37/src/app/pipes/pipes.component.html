@@ -1,0 +1,51 @@
+<div class="container mt-5">
+    <h2>Pipe-ok használata</h2>
+    <h3>Szövegformázó elemek</h3>
+    <!-- pipe jel altgr + w -->
+    <p>Nagybetűssé alakított szöveg: {{ExampleTxt | uppercase}}</p>
+    <p>Kisbetűssé alakított szöveg: {{ExampleTxt | lowercase}}</p>
+    <p>Nagy kezdőbetűssé alakított szöveg (minden különálló szó eleje nagybetű): {{ExampleTxt | titlecase}}</p>
+
+    <h3>Számok formázása</h3>
+    <p>Eredeti szám: {{RealValue}}</p>
+    <p> Egész számmá kerekítés (matematika szabályai szerint): {{ RealValue | number:'1.0-0'}}</p>
+    <p> Vezető nulla beszúrása {{ RealValue | number:'3.0-0'}}</p>
+    <p> Tizedes érték megadásával {{ RealValue | number:'1.0-2'}}</p>
+
+    <h3>Százalék formázása</h3>
+    <p>Eredeti százalékos érték: {{PercentValue}}</p>
+    <p>Egész számra kerekíti, egész szám: {{PercentValue | percent }}</p>
+    <p>Egész számra kerekíti, egész szám (másként): {{PercentValue | percent:'1.0-0' }}</p>
+    <p>Százalék megjelenítése tizedes értékekkel (kerekítéssel): {{PercentValue | percent:'1.0-2' }}</p>
+
+    <h3>Pénzértékek formázása</h3>
+    <p>Eredeti pénzérték: {{ MoneyValue}}</p>
+    <p>Dollár: {{MoneyValue | currency:'USD'}}</p>
+    <p>Euró: {{MoneyValue | currency:'EUR'}}</p>
+    <p>Font: {{MoneyValue | currency:'GBP'}}</p>
+    <p>Ft: {{MoneyValue | currency:'HUF'}}</p>
+    <p>Dollár: {{MoneyValue | currency:'USD':'symbol':'1.0-3'}}</p>
+
+    <h3>Dátum/idő formázása</h3>
+    <p>Eredeti dátum: {{DateValue}}</p>
+    <p>Rövid teljes dátum: {{DateValue | date:'short'}}</p>
+    <p>Hosszú teljes dátum: {{DateValue | date:'long'}}</p>
+    <p>shortDate: {{DateValue | date:'shortDate'}}</p>
+    <p>fullDate: {{DateValue | date:'fullDate'}}</p>
+    <p>shortTime: {{DateValue | date:'shortTime'}}</p>
+    <p>longTime: {{DateValue | date:'longTime'}}</p>
+
+    <h2>Egyedi minták</h2>
+    <p> Év: {{DateValue | date:'yyyy'}}</p>
+    <p> Hónap: {{DateValue | date:'MM'}}</p>
+    <p> Perc: {{DateValue | date:'mm'}}</p>
+    <p> Nap: {{DateValue | date:'dd'}}</p>
+    <p> Év-Hónap-Nap #: {{DateValue | date:'yyyy#MM#dd'}}</p>
+    <p> Év-Hónap-Nap /: {{DateValue | date:'yyyy/MM/dd'}}</p>
+    <p> Év-Hónap-Nap .: {{DateValue | date:'yyyy.MM.dd'}}</p>
+    <p> Év-Hónap-Nap - (javasolt elválasztó): {{DateValue | date:'yyyy-MM-dd'}}</p>
+    <p> Nap szöveggel: {{DateValue | date: 'EEEE'}}</p>
+    <p> Óra {{DateValue | date: 'hh'}}</p>
+    <p> Perc {{DateValue | date: 'mm'}}</p>
+    <p> Mp: {{DateValue | date: 'ss'}}</p>
+</div>

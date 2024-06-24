@@ -1,0 +1,72 @@
+body {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #e6e6e6;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 30px;
+}
+
+#content {
+    background-color: #ffffff;
+    padding: 30px;
+    text-align: justify; /*sorkizárt*/
+}
+
+p.dolt {
+    font-style: italic;
+}
+
+p {
+    padding-top: 10px;
+}
+
+/*
+content id-n belüli képek
+#content img { 
+   
+}
+*/
+
+/* kebab-case javasolt*/
+.img-eniac-1{
+    width: 400px;
+    float: right;
+    padding-left: 30px;
+}
+
+.img-eniac-2{
+    width: 320px;
+    float:right;
+    padding-left: 30px;
+}
+
+p.jobbra {
+    text-align: right;
+    font-size: 14px;
+}
+
+ul {
+    font-size: 90%;
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+/* linkek anchor pszeudó formázása */
+a:visited {
+    color:#c0c0c0;
+}
+
+a:link {
+    color:blue;
+}
+
+a:hover {
+    color:green;
+}
+
+a:active {
+    color:yellow;
+}

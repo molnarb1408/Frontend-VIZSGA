@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajánlatkérő</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <fieldset>
+        <legend>
+            <h1>Ajánlatkérő</h1>
+        </legend>
+        <form method="POST">
+            <label for="name">Név*:</label>
+            <input type="text" name="name" id="name" title="Kérem adja meg a teljes nevét" required>
+            <label for="email">Email*:</label>
+            <input type="email" name="email" id="email" title="Kérem adja meg az emailcímét pld: tesztelek@teszt.hu" required>
+            <p class="text-medium">Munka típusa:</p>
+            <ul class="list-none">
+                <li>
+                    <input type="checkbox" name="paint" id="paint">
+                    <label for="paint">festés</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="glazing" id="glazing">
+                    <label for="glazing">mázolás</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="wallpapering" id="wallpapering">
+                    <label for="wallpapering">tapétázás</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="smoothing" id="smoothing">
+                    <label for="smoothing">glettelés</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="grinding" id="grinding">
+                    <label for="grinding">csiszolás</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="other" id="other">
+                    <label for="other">egyéb</label>
+                </li>
+            </ul>
+            <label for="wallSurfaceSize">Falfelület mérete (m<sup>2</sup>): </label>
+            <input type="number" name="wallSurfaceSize" id="wallSurfaceSize" min="0">
+            <textarea name="comment" id="comment" cols="50" rows="10" placeholder="Ide kérem adja meg az igényeit!" maxlength="150"></textarea>
+            <input type="submit" value="KÜLDÉS">
+        </form>
+    </fieldset>
+</body>
+</html>

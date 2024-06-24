@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While</title>
+</head>
+<body>
+    <script>
+        // Elöltesztelős ciklus: Nem tudjuk, hogy hányszor kell lefuttatni, 
+        // lehet 1X sem fog lefutni. 
+        // Elöször megnézi a ciklusfeltételt, ha igaz, akkor végrehajta, amit
+        // ciklusmagban talál.
+        // Feladatokban: addig, amig
+        // Ritkábban használjuk, mint a FOR ciklust
+
+        // For ciklussal kellene megoldani, de megnézzük while-al
+        // Kezdőértékadás: let i = 0;
+        // Ciklusfeltétel: i<3
+        // Ciklusmagban kiírás és léptetés (i++)
+        let i = 0;
+        while (i < 3) {
+            console.log(i); //0 1 2
+            i++; //ha kimarad, akkor végtelen ciklus
+        }
+
+        // Ha helytelül szerepel a kezdőértékadás, feltétel és léptetés, akkor vagy
+        // bele sem megy a ciklusba vagy végtelen ciklust kapunk
+        // while(true){} //végtelen ciklus
+        // while(false){} //sosem megy bele
+
+        let j = 3;
+        while (j) {
+            console.log(j); //3 2 1
+            j--;
+        }
+        //Gyengén tipusos nyelveknél a 0 az FALSE, az 1 pedig a TRUE
+        // while(1){} //végtelen ciklus
+        // while(0){} //nem megy bele a ciklusba ciklus
+
+        //Feladat01: 0-tól léptessunk számokat egyessével, addíg, amig a 7-tel maradék nélkül
+        // osztható számok összege át nem lépi a 100-at! A program futásának végén jelenítsük meg
+        // a ciklusváltozó és az összeg értékét!
+        console.log("Feladat01: 7-tel maradék nélkül osztható számok összeadása, addig amig át nem lépi a 100-at!");
+        let k = 0; //általában i-t használjuk (vagy 2d-s tömbnél pld a j-t is)
+        let sum = 0;
+        while (sum<100){
+            //ciklusmag, amig a feltétel igaz
+            if (k % 7 ==0){
+                sum+=k;
+                console.log(k);
+            }
+            k++;
+        }
+        console.log("k értéke (ciklusváltozó): "+k);//36
+        console.log("sum értéke: "+sum);//105
+
+        //Megjegyzés: jövőhéten eldöntés tételében
+    </script>
+</body>
+</html>

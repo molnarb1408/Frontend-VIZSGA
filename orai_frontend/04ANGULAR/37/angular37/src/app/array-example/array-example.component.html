@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <h2>Gyümölcsök tömb</h2>
+    <!-- <p>Első elem a fruits tömbben: {{fruits[0]}}</p> hibás, mert private -->
+    <p>Első elem a fruits tömbben: {{Fruits[0]}}</p>
+    <p>Utolsó elem a fruits tömbben (hibás megoldás - hard code): {{Fruits[3]}}</p>
+    <p>Utolsó elem a fruits tömbben(length): {{Fruits[Fruits.length-1]}}</p>
+    <p>Utolsó elem a fruits tömbben (at): {{Fruits.at(-1)}}</p>
+    <p>Véletlen elem a tömbben (1. megoldás): {{ Fruits[getRandomNumberBySizeOfFruits()]}}</p>
+    <p>Véletlen elem a tömbben (2. megoldás): {{ getRandomFruitElement()}}</p>
+    <p>A gyümölcsök tömb bejárása for ciklussal - ngFor</p>
+    <ol>
+        <li *ngFor="let fruit of Fruits">
+            {{ fruit }}
+        </li>
+    </ol>
+    <ul>
+        <li *ngFor="let point of Points">
+            {{ point }}
+        </li>
+    </ul>
+</div>

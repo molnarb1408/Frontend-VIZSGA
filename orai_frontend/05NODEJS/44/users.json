@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "userName": "John Doe",
+    "email": "john.doe@example.com",
+    "birthDate": "1990-01-01",
+    "status": true
+  },
+  {
+    "id": 2,
+    "userName": "Jane Doe",
+    "email": "jane.doe@example.com",
+    "birthDate": "1992-05-10",
+    "status": false
+  },
+  {
+    "id": 3,
+    "userName": "Jonnie Doe",
+    "email": "jonnie.doe@example.com",
+    "birthDate": "1985-12-15",
+    "status": true
+  },
+  {
+    "id": 4,
+    "userName": "Jimmy Doe",
+    "email": "jimmy.doe@example.com",
+    "birthDate": "1988-08-20",
+    "status": false
+  },
+  {
+    "id": 5,
+    "userName": "Jenny Doe",
+    "email": "jenny.doe@example.com",
+    "birthDate": "1995-03-25",
+    "status": true
+  },
+  {
+    "id": 1717499480750,
+    "userName": "tesztelek",
+    "email": "tesztelek@teszt.hu",
+    "birthDate": "1999-01-01",
+    "status": true
+  },
+  {
+    "id": 1717499492062,
+    "userName": "tesztelek5",
+    "email": "tesztelek5@teszt.hu",
+    "birthDate": "1999-01-05",
+    "status": false
+  },
+  {
+    "id": 1717499502564,
+    "userName": "tesztelek3",
+    "email": "tesztelek3@teszt.hu",
+    "birthDate": "1999-01-03",
+    "status": false
+  },
+  {
+    "id": 1717499644805,
+    "userName": "tesztelek2",
+    "email": "tesztelek2@teszt.hu",
+    "birthDate": "1999-01-02",
+    "status": false
+  },
+  {
+    "id": 1717499711677,
+    "userName": "gipszjakab2",
+    "email": "gipszjakab2@gipsz.hu",
+    "birthDate": "1998-02-03",
+    "status": true
+  },
+  {
+    "id": 1717500144738,
+    "userName": "Teszt Postman - userName 001",
+    "email": "Teszt Postman  - email 001",
+    "birthDate": "1999-01-10",
+    "status": true
+  }
+]

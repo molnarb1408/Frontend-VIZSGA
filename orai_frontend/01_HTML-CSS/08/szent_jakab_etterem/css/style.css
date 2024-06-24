@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana;
+  color: #fff;
+  background-color: #5cdb95;
+}
+
+.menu {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+.menu-item {
+  background-color: #05386b;
+  padding: 8px;
+  margin-top: 7px;
+  border-radius: 15px;
+}
+
+.menu-item-active {
+  color: black;
+  background-color: #edf5e1;
+}
+
+.main {
+  float: left;
+  width: 60%;
+  padding: 0 40px;
+  min-height: 350px;
+}
+
+.right-banner {
+  background-color: #05386b;
+  float: left;
+  width: 20%;
+  padding: 15px;
+  margin-top: 7px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.img-right-logo {
+  width: 70%;
+}
+
+.header {
+  background-color: #05386b;
+  padding: 15px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.header h1 {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+p.text-justify {
+  text-align: justify;
+}
+
+div.menu>a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.dishes-table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  margin-bottom: 40px;
+}
+
+.dishes-table th {
+  padding: 15px;
+}
+
+.dishes-table td {
+  padding: 8px;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+/*
+  td:nth-child(2),td:nth-child(3),tr:nth-child(2){
+  text-align: center;
+}
+*/
+
+.sold-out-text {
+  background-color: red;
+}
+
+table,
+td,
+th {
+  border: 1px solid #05386b;
+}
+
+fieldset {
+  border: 1px solid #05386b;
+  margin-top:30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.btn-submit {
+  background-color: #05386b;
+  color:white;
+  height: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: #387cc0;
+}
+
+input {
+  margin-bottom: 20px;
+  font-size: 110%;
+}
+
+.block-label{
+  display: block;
+  margin-bottom: 5px;
+}
+
+.block-input {
+  display: block;
+}
+
+.inline-input {
+  display:inline;
+}
+
+select {
+  margin-bottom: 20px;
+  font-size: 105%;
+}
+
+.textarea-reflections {
+  margin-top:15px;
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width:790px) {
+
+  /* For mobile phones: */
+  .menu,
+  .main {
+    width: 100%;
+  }
+
+  .right-banner {
+    width: 70%;
+    margin-left: auto; /* érvényesül a float:left miatt*/
+    margin-right: auto;/* érvényesül a float:left miatt*/
+  }
+}
+
+@media only screen and (max-width:580px) {
+
+  /* For mobile phones: */
+  .menu,
+  .main,
+  .right-banner {
+    width: 100%;
+  }
+}

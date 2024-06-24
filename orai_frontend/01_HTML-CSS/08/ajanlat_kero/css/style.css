@@ -1,0 +1,35 @@
+input {
+    display: block;
+    font-size: 120%;
+    margin-bottom: 10px;
+}
+
+fieldset {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label {
+    font-size: 130%;
+}
+
+.list-none {
+    list-style-type: none;
+}
+
+.text-medium {
+    font-size: 130%;
+}
+input[type="checkbox"] {
+    display: inline;
+}
+
+textarea {
+    display: block;
+    font-size: 130%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    resize: none;
+}
+

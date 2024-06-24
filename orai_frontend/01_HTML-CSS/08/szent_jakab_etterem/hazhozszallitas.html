@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta author="Blahut Lóránt">
+	<title>Szent Jakab Étterem - Házhozszállítás</title>
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Név: Blahut Lóránt, csoport: jff -->
+</head>
+
+<body>
+	<!-- header starts here -->
+	<div class="header">
+		<h1>Szent Jakab Étterem</h1>
+		<small>Cím: 1111 Kerekes u. 22. Tel: 555-31-46
+		</small>
+	</div>
+	<!-- header ends here -->
+
+	<div style="overflow:auto">
+		<!-- menu starts here -->
+		<div class="menu">
+			<a href="fooldal.html">
+				<div class="menu-item">Főoldal</div>
+			</a>
+			<a href="araink.html">
+				<div class="menu-item">Áraink</div>
+			</a>
+			<a href="kapcsolat.html">
+				<div class="menu-item">Kapcsolat</div>
+			</a>
+			<a href="hazhozszallitas.html">
+				<div class="menu-item menu-item-active">Házhozszállítás</div>
+			</a>
+		</div>
+		<!-- menu ends here -->
+		<div class="main">
+			<fieldset>
+				<legend>Házhozszállítás</legend>
+			<!-- form starts here -->
+			<form method="POST">
+				<div class="block-input">
+					<label for="name" class="block-label">Név*:</label>
+					<input type="text" name="name" id="name" required>
+				</div>
+				<div class="block-input">
+					<label for="email" class="block-label">Email*:</label>
+					<input type="email" name="email" id="email" required>
+				</div>
+				<div class="block-input">
+					<label for="address" class="block-label">Cím*:</label>
+					<input type="text" name="address" id="address" required>
+				</div>
+				<div class="block-input">
+					<label for="soup">Leves</label>
+					<select name="sout" id="sout">
+						<option value="0">Kérem válasszon!!!</option>
+						<option value="1">Gulyásleves</option>
+						<option value="2">Csontleves</option>
+						<option value="3">Gyümölcsleves</option>
+					</select>
+				</div>
+				<div class="block-input">
+					<label for="mainDish">Főétel</label>
+					<select name="mainDish" id="mainDish">
+						<option value="0">Kérem válasszon!!!</option>
+						<option value="1">Marhapörkölt</option>
+						<option value="2">Rozékacsamell</option>
+						<option value="3">Harcsapaprikás</option>
+					</select>
+				</div>
+				<div class="block-input">
+					<textarea class="textarea-reflection" name="reflection" id="reflection" cols="50" rows="8" placeholder="Kérem ide írja a megrendeléssel kapcsolatos megjegyzését!"></textarea>
+				</div>
+				<div class="block-input">
+					<input class="btn-submit" type="submit" value="Küldés">
+				</div>
+			</form>
+			<!-- form ends here -->
+		</fieldset>
+		</div>
+		<!-- right banner starts here -->
+		<div class="right-banner">
+			<h2>Ételeink</h2>
+			<a href="araink.html"><img class="img-right-logo" src="kepek/etel_marhaporkolt.png" alt="marhapörkölt"></a>
+			<h2>Rendelés</h2>
+			<a href="hazhozszallitas.html"><img class="img-right-logo" src="kepek/szallitas.png" alt="házhozszállítás"></a>
+		</div>
+		<!-- right banner ends here-->
+	</div>
+</body>
+
+</html>

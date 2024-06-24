@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elágazások</title>
+</head>
+<body>
+
+    <script>
+        // Fv vagy eljárást lehet használni, de nem kötelező!
+        // Feladat01: Kérjük be a külső hőmérsékletet, majd döntsük el, hogy fagy -e odakint
+        // Csak akkor kell választ adnia a programnak, ha fagy! 
+    
+        // Feladat02: Kérjük be a JS első hivatalos kiadási évét (1995)! Írjuk, ki, hogy helyes vagy
+        // helytelen a válasz!
+
+        // Feladat03: Kérjük be az ES6 kiadási évét (2015)! A tipp után adjunk részletes tájékoztatást (kisebb/nagyobb)!
+    
+        // BONUS: JS elágazás rövidítés: ternary operator (java)
+
+        /**************************************************************************/
+        /*************************** 1. Egyirányú elágazás ***********************/ 
+        /************************************************************************/
+        // Egyirányú: csak a feltétel igaz ágával foglalkozunk
+
+        let temperature = Number(prompt("Kérem adja meg a külső hőmérsékletet: "));
+        //ellenőrzés
+        console.log("temperature értéke: " + temperature + ", tipusa: "+typeof(temperature));
+
+        //if (condition); //hibás szintaksziks itt ezen a ponton nincs ;
+
+        //Ha a feltétel igaz, akkor végrehajta a {} közötti részt (egy vagy több utasítást)
+        //Ha false a feltétel (hamis), akkor nem történik semmi
+        if (temperature<0){
+            console.log("Fagypont alatti a hőmérséklet...");
+        }
+
+        if (0){} //sosem hajt végre
+        if (1) {} //mindig végrehajtja
+
+        //rövidítés: ha egy db utasítás van - helyes szintakszis
+        if (temperature<0) console.log("Fagypont alatti a hőmérséklet...");
+
+        let year = 2018;
+        let condition = (year==2018);
+        console.log(condition);
+        if (condition) {
+            console.log("A megadott év 2018 volt...");
+        }
+
+        /**************************************************************************/
+        /*************************** 2. Kétirányú elágazás ***********************/ 
+        /************************************************************************/
+        let yearJSFirstPublished = Number(prompt("Adja meg a JS első hivatalos kiadási évét: "));
+        if (yearJSFirstPublished != 1995){
+            console.log("Helyes tipp :)"); // Ha a feltétel igaz, akkor ebbe az ágba megy bele
+            // Amit itt talál a {} között azt végrehajta
+        } else {
+            console.log("Helytelen tipp :( "); //false: Ha a feltétel hamis, akkor ebbe az ágba megy bele
+             // Amit itt talál a {} között azt végrehajta
+        }
+
+        // CC szerint úgy fogalmazzuk meg a feltételt, hogy az igaz ág legyen a "jó" ág
+        // if (validateUser(userName, password)){
+        //     // belső oldalra irányítás
+        // } else {
+        //     // hibaüzenet kiírása (marad az oldalon)
+        // }
+
+        // Hibás, helyette egyirányút használjunk!!!
+        // illusion of choice
+        // var isRegistered = true;
+        // if (isRegistered) {
+        //     sendMail();
+        // } else {
+        //     // itt semmit nem kell csinálnia
+        // }
+        
+        //clg hotkey - JavaScript (ES6) code snippets
+        //console.log(object);
+
+        /**************************************************************************/
+        /*************************** 3. Többirányú elágazás ***********************/ 
+        /************************************************************************/
+        // Ha 2-nél is több a lehetséges irány, amerre a programunkat tudjuk vezérelni
+        let yearES6Published = Number(prompt("Adja meg az ES6 kiadás évét: "));
+        if (yearES6Published < 2015) {
+            alert("A megadott szám: "+yearES6Published + " túl korai :( ");
+            console.log("A megadott szám: "+yearES6Published + " túl korai :( ");
+        } else if (yearES6Published > 2015){
+            alert("A megadott szám: "+yearES6Published + " túl késői :( ");
+            console.log("A megadott szám: "+yearES6Published + " túl késői :( ");
+        } else if (yearES6Published == 2015){
+            alert("A megadott szám: "+yearES6Published + ", gratulálok eltaláltad :)");
+            console.log("A megadott szám: "+yearES6Published + ", gratulálok eltaláltad :)");
+        } else {
+            alert("Hibás adat!!!");
+            console.log("Hibás adat!!!");
+        }
+        // else if blokkok száma akármennyi lehet
+        // az utolsó else lemaradhat
+        // Hivatalosan a helyes szintakszis régen így volt: if - else if - else (ma már az else lemaradhat)
+
+        /****** Kétirányú elágazás rövíditése: ternary operator, short if, condional operation ********/
+        var isRegistered = false;
+        isRegistered ? console.log("Regisztrált") : console.log("Nem reigsztált");
+        var number1 = 10;
+        var number2 = 15;
+        number1<number2 ? console.log("Első szám a kisebb") : console.log("Második szám a kisebb");
+        // FONTOS: condition: csak igaz vagy hamis lehet
+        // condition ? true: false
+        // feltétel ? igaz: hamis
+        // korlátja, hogy csak 1 utasítás állhat az igaznál, 1 a hamisnál
+        // Előnye a tömörség és jól áttekinthetőség
+    </script>
+    <!--
+    <p class=<?php condition ? print("text-success") : print("text-danger") ?>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo possimus voluptatem nemo ipsa tenetur deleniti ducimus repudiandae, facilis ipsam dolore, perferendis doloremque quis necessitatibus nesciunt alias quos ab non deserunt!
+    </p>
+    -->
+</body>
+</html>

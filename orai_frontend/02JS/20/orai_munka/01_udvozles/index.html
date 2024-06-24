@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üdvözlés feladat</title>
+</head>
+<body>
+    <script>
+        // Feladat01: Kérjük be a vezetéknevet és keresztnevet, majd írjuk ki egyben az üdvözlést egy felugró ablakban!
+
+        //1. megoldás fv és eljárás nélkül
+        // var lastName = prompt("Kérjük adja meg a vezetéknevét: ");
+        // var firstName = prompt("Kérjük adja meg a keresztnevét: ");
+        // var fullName = lastName + " " + firstName;
+        // alert("Üdvözöllek, "+fullName+"!!!");
+
+        //2. megoldás fv és eljárással
+        function getInputName(message){
+            var name = prompt(message);
+            return name;
+        }
+
+        function concatNames(lastName, firstName){
+            return lastName + " " + firstName;
+        }
+
+        function displaySaluteAlert(){
+            var lastNameInputMessage = "Kérjük adja meg a vezetéknevét: ";
+            //var lastNameInputMessage = "Please enter your lastname: ";
+            var firstNameInputMessage = "Kérjük adja meg a keresztnevét: ";
+            alert("Üdvözöllek, "+concatNames(getInputName(lastNameInputMessage), getInputName(firstNameInputMessage)) +"!!!");
+        }
+        displaySaluteAlert();
+    </script>
+</body>
+</html>

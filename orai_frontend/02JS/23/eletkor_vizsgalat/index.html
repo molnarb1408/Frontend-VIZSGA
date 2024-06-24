@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Életkor vizsgálat</title>
+</head>
+<body>
+    <h1>JS getElementById() - Életkor vizsgálat</h1>
+    <form method="post">
+        <label for="age">Életkor*:</label>
+        <input type="number" name="age" id="age" min="0" max="130" required>
+        <button type="button" onclick="ageCheck()">Ellenőrzés </button>
+        <button type="button" onclick="ageCheckCC()">Ellenőrzés - CC</button>
+    </form>
+    <p id="result"></p>
+    <script src="js/ageCheck.js"></script>
+</body>
+</html>

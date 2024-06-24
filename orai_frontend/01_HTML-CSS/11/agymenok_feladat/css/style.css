@@ -1,0 +1,16 @@
+body {
+    background-image: url(../pictures/bigbangbg.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #6f282e;
+}
+
+.container {
+    background-color: rgb(255,255,255,0.9);    
+}
+
+.img-yellow-border {
+    border: 5px solid #ffd545;
+    box-shadow: 3px 3px rgb(174,174,174,0.37);
+}

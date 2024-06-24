@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Az oldal címe</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <label for="titleChange"><h3>Az oldal címe átír: DOM alapok-ra</h3></label>
+    <button id="titleChange" onclick="titleChange()">Title Alakítás</button>
+    <hr>
+    <img id="image" src="kepek/macska.jpg" width="160"><br>
+    <button id="kepcsere" onclick="kepCsere()">Kép kicserél</button>
+    <hr>
+    <h3>Eredetileg csak félkövér</h3>
+    <div id="teszt">
+        <p class="felkover">1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="felkover">2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <button onclick="doltBeallit()">Dőlt Beállít</button>
+    </div>
+    <hr>    
+    <button onclick="divHozzaAd()">Div beszúr</button><br><br>
+    <div id="demo">
+    </div>
+    <hr>
+    <form action="" name="tesztForm">
+        <input type="text" name="nev" placeholder="Név">
+        <input type="password" name="pwd" placeholder="Jelszó">
+        <input type="email" name="email" id="email" placeholder="Email">
+        <input type="button" name="kuld" value="küldés">
+    </form><br>
+    <button onclick="formElemKiir()">FORM elemek kiír</button><br><br>
+    <p id="formElemei"></p>
+    <h3>Minden h3-as szintű címsor kékre állít (betűszín)</h3>
+    <button onclick="h3KekreAllit()">H3 Kék</button><br><br>
+    <script src="js/dom_mintakod.js"></script>
+</body>
+</html>

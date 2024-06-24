@@ -1,0 +1,46 @@
+<h2 class="text-center mat-headline-2">Dolgozó felvitel</h2>
+<form [formGroup]="form">
+    <mat-form-field appearance="outline">
+        <mat-label>Név:</mat-label>
+        <input matInput formControlName="employeeName">
+        <mat-hint>5 és 50 karakter között lehet</mat-hint>
+    </mat-form-field>
+    <!-- <mat-form-field appearance="outline">
+        <mat-select formControlName="employeeRole">
+            <mat-option value="1">programozó</mat-option>
+            <mat-option value="2">grafikus</mat-option>
+            <mat-option value="3">ügyintéző</mat-option>
+        </mat-select>
+        <mat-label>Beosztások</mat-label>
+        <mat-hint>Itt adhatjuk meg, milyen beosztásban fog dolgozni...</mat-hint>
+    </mat-form-field> -->
+    <!-- Feladat: employeeRoles változóból töltsük fel a legördülő menű értékeit! -->
+    <mat-form-field appearance="outline">
+        <mat-select formControlName="employeeRole">
+            <mat-option *ngFor ="let employeeRole of employeeRoles" [value]="employeeRole.value" >{{employeeRole.viewValue}}</mat-option>
+        </mat-select>
+        <mat-label>Beosztások</mat-label>
+        <mat-hint>Itt adhatjuk meg, milyen beosztásban fog dolgozni...</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Fizetés</mat-label>
+        <input type="number" matInput formControlName="employeeSalary">
+        <mat-hint>Min 0, max 10000000 Ft</mat-hint>
+    </mat-form-field>
+    <mat-radio-group formControlName="employeeGender">
+        <mat-radio-button value="1">Férfi</mat-radio-button>
+        <mat-radio-button value="2">Nő</mat-radio-button>
+        <mat-radio-button value="3">Egyéb</mat-radio-button>
+    </mat-radio-group>
+    <mat-checkbox formControlName="employeeStatus">Aktív</mat-checkbox>
+    <button mat-raised-button color="primary">Dolgozó mentése</button>
+</form>
+<h3> Dolgozó adatok - json formátum - Kétirányú adatkötéssel</h3>
+{{form.value | json}}
+<hr>
+<h3> Dolgozói adatok megjelenítése másként - Interpolation -  Kétirányú adatkötéssel</h3>
+<p>Dolgozó neve: {{this.form.controls['employeeName'].value}}</p>
+<p>Dolgozó beosztása: {{this.form.controls['employeeRole'].value}}</p>
+<p>Dolgozó fizetése: {{this.form.controls['employeeSalary'].value}}</p>
+<p>Dolgozó neme: {{this.form.controls['employeeGender'].value}}</p>
+<p>Dolgozó állapota: {{this.form.controls['employeeStatus'].value}}</p>

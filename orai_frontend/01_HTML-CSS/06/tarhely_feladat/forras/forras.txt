@@ -1,0 +1,50 @@
+
+Főoldal
+Csomag ajánlatok
+Alap								Közép							Haladó
+Tárhely: 100 MB					Tárhely: 1 GB					Tárhely: korlátlan
+Emailcím: 1 db					Emailcím: 5 db					Emailcím: 10 db
+Sávszélesség: 10 GB				Sávszélesség: 100 GB			Sávszélesség: 100 GB
+FTP hozzáférés: alap			FTP hozzáférés: titkosított		FTP hozzáférés: titkosított
+24/7 támogatás: nincs			24/7 támogatás: van				24/7 támogatás: van
+Mentések: hetente				Mentések: naponta				Mentések: óránként
+Adatbázisok: MySQL				Adatbázisok: MySQL,InnoDB		Adatbázisok: MySQL,InnoDB, PostgreSql
+Havidíj: 1800 Ft + ÁFA			Havidíj: 2500 Ft + ÁFA			Havidíj: 3600 Ft + ÁFA
+	
+
+Cégünkről
+
+Hozzáértő szolgáltatóként gazdaságos, megbízható és ügyfélbarát megoldásokat nyújtunk. Több, mint 10 éves
+tapasztalattal állunk ügyfeleink rendelkezésére. Webtárhelyeinken gyorselérésű háttértárakat (SSD-t) alkalmazunk.
+Fájlokat FTP segítségével könnyen fel/le tölthet. A magyar nyelvű Cpanel Admin felülettel kezelheti tárhelyét, 99,9%-os
+rendelkezésreállással.
+
+Cégünk megfelelő választás, ha
+- Ön első bemutatkozó honlapjához keres tárhelyet
+- összetett, dinamikusan frissülő honlapot szeretne
+- nagy forgalmú webshopot szeretne létrehozni, üzemeltetni
+- WordPress, Drupal, Joomla, Moodle vagy egyéb CMS rendszert szeretne használni
+
+Segítünk választani: Webstatisztika
+Megfelelő csomag kiválasztásához tekintse meg ajánlatunkat a FŐOLDAL menüpontban!
+
+
+Webstatisztika
+
+Név			Piaci részesedés			Aktív oldalak			Hivatalos oldala
+WordPress	59.7%						22,674,100				wordpress.com
+Joomla		6.7%						1,837,862				joomla.org
+Drupal		4.7%						577,549					drupal.org
+Magento		2.3%						214,455					magento.com
+Forrás: websitesetup.org
+CSOMAGAJÁNLATAINK
+
+Munkatársaink
+
+Név				Beosztás				Email
+Teszt Elek		igazgató			tesztelek@szerverceg.hu
+				ügyvezető
+Gipsz Jakab		rendszergazda		gipszjakab@szerverceg.hu
+Nap Pal			rendszergazda		nappal@szerverceg.hu
+John Doe		programozó			johndoe@szerverceg.hu
+

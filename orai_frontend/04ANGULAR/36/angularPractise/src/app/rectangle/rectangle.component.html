@@ -1,0 +1,15 @@
+<div class="container mt-5 w-25">
+    <form>
+        <div class="form-control">
+            <label for="A">A oldal:</label>
+            <input type="number" [(ngModel)]="A" class="form-control" name="A" id="A">
+            <label for="B">B oldal:</label>
+            <input type="number" [(ngModel)]="B" class="form-control" name="B" id="B">
+        </div>
+    </form>
+    <div class="alert alert-success mt-5" role="alert">
+        <p>A téglalap kerülete: {{ getPerimeter() }}</p>
+        <p>A téglalap terület: {{ getArea() }}</p>
+        <p>A téglalap terület(másként - nem javasolt): {{(A*B)}}</p>
+    </div>
+</div>

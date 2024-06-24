@@ -1,0 +1,10 @@
+.text-danger {
+    color:white !important;
+    background-color: red;
+    display: inline;
+    padding: 8px;
+}
+
+.btn-primary {
+    background-color: orange !important;
+}

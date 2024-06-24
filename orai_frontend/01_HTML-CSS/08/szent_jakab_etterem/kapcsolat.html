@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta author="Blahut Lóránt">
+	<title>Szent Jakab Étterem - Kapcsolatfelvétel</title>
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Név: Blahut Lóránt, csoport: jff -->
+</head>
+
+<body>
+	<div class="header">
+		<h1>Szent Jakab Étterem</h1>
+		<small>Cím: 1111 Kerekes u. 22. Tel: 555-31-46
+		</small>
+	</div>
+	<div style="overflow:auto">
+		<div class="menu">
+			<a href="fooldal.html">
+				<div class="menu-item">Főoldal</div>
+			</a>
+			<a href="araink.html">
+				<div class="menu-item">Áraink</div>
+			</a>
+			<a href="kapcsolat.html">
+				<div class="menu-item menu-item-active">Kapcsolat</div>
+			</a>
+			<a href="hazhozszallitas.html">
+				<div class="menu-item">Házhozszállítás</div>
+			</a>
+		</div>
+		<div class="main">
+			<fieldset>
+				<legend>Kapcsolatfelvétel</legend>
+				<form method="POST">
+					<div class="block-input">
+						<label for="Email*:"></label>
+						<input type="email" name="email" id="email" required>
+					</div>
+					<p>Rendelt már tőlünk?</p>
+					<div class="inline-input">
+						<input type="radio" name="ordered" id="rendelt">
+						<label for="rendelt">Igen</label>
+					</div>
+					<div class="inline-input">
+						<input type="radio" name="ordered" id="nemRendelt" checked>
+						<label for="nemRendelt">Nem</label>
+					</div>
+					<div class="block-input">
+						<label for="purpose">Célja</label>
+						<select name="purpose" id="purpose">
+							<option value="reklamáció">Reklamáció</option>
+							<option value="véleménybeküldés">Véleménybeküldés</option>
+							<option value="rendezvényigénylés">Rendezvényigénylés</option>
+							<option value="egyéb">Egyéb</option>
+						</select>
+					</div>
+					<div class="block-input">
+						<textarea class="textarea-reflection" name="reflection" id="reflection" cols="50" rows="8" placeholder="Kérem ide írja meg az észrevételeit!"></textarea>
+					</div>
+					<div class="block-input">
+						<input class="btn-submit" type="submit" value="Küldés">
+					</div>
+				</form>
+			</fieldset>
+		</div>
+		<div class="right-banner">
+			<h2>Ételeink</h2>
+			<a href="araink.html"><img class="img-right-logo" src="kepek/etel_marhaporkolt.png" alt="marhapörkölt"></a>
+			<h2>Rendelés</h2>
+			<a href="hazhozszallitas.html"><img class="img-right-logo" src="kepek/szallitas.png" alt="házhozszállítás"></a>
+		</div>
+	</div>
+</body>
+
+</html>

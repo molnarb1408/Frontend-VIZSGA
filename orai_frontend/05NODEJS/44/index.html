@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodeJS - REST API - USER</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Felhasználók</h2>
+        <form id="newUserForm" class="mb-4 w-50">
+            <h3>Új felhasználó</h2>
+            <div class="mb-3">
+                <label for="userName" class="form-label">Felhasználónév:</label>
+                <input type="text" class="form-control" name="userName" id="userName" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" name="email" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="birthDate" class="form-label">Születési dátum:</label>
+                <input type="date" class="form-control" name="birthDate" id="birthDate" required>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" name="status" id="status">
+                <label class="form-check-label" for="status">Állapot</label>
+            </div>
+            <button class="btn btn-primary" type="submit"><i class="fas fa-plus"></i> Létrehozás</button>
+        </form>
+        <table id="usersTable" class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Felhasználónév</th>
+                    <th>E-mail</th>
+                    <th>Születési dátum</th>
+                    <th>Státusz</th>
+                    <th>Műveletek</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const tableBody = document.querySelector('#usersTable tbody');
+        const form = document.getElementById('newUserForm');
+
+        function loadUsers() {
+            axios.get('users')
+                .then(response => {
+                    const users = response.data;
+                    tableBody.innerHTML = '';
+                    users.forEach(user => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${user.id}</td>
+                            <td>${user.userName}</td>
+                            <td>${user.email}</td>
+                            <td>${user.birthDate}</td>
+                            <td>${user.status ? 'Aktív' : 'Inaktív'}</td>
+                            <td>
+                                <button class="btn btn-warning editBtn" data-id="${user.id}"><i class="fas fa-edit"></i> Szerkesztés</button>
+                                <button class="btn btn-danger deleteBtn" data-id="${user.id}"><i class="fas fa-trash"></i> Törlés</button>
+                            </td>
+                        `;
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => {
+                    console.error("Hiba történt: " + error);
+                });
+        }
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const userNameInput = document.getElementById('userName');
+            const emailInput = document.getElementById('email');
+            const birthDateInput = document.getElementById('birthDate');
+            const statusInput = document.getElementById('status');
+
+            const userName = userNameInput.value;
+            const email = emailInput.value;
+            const birthDate = birthDateInput.value;
+            const status = statusInput.checked;
+
+            axios.post('userAdd',{userName,email,birthDate,status})
+                .then(response => {
+                    const data = response.data;
+                    alert(data.message);
+                    userNameInput.value = '';
+                    emailInput.value = '';
+                    birthDateInput.value ='';
+                    statusInput.checked =false;
+                    loadUsers();
+                })
+                .catch(error=>{
+                    console.err("Hiba történt: "+error);
+                });
+
+        });
+
+        tableBody.addEventListener('click', (event) => {
+            if (event.target.classList.contains('editBtn')) {
+                const userId = event.target.getAttribute('data-id');
+                const userNameCell = event.target.parentNode.parentNode.querySelector('td:nth-child(2)');
+                const emailCell = event.target.parentNode.parentNode.querySelector('td:nth-child(3)');
+                const birthDateCell = event.target.parentNode.parentNode.querySelector('td:nth-child(4)');
+                const statusCell = event.target.parentNode.parentNode.querySelector('td:nth-child(5)');
+
+                const newUserName = prompt("Kérlek add meg az új felhasználónevet: ",userNameCell.textContent);
+                const newUserEmail = prompt("Kérlek add meg az új emailcímet: ",emailCell.textContent);
+                const newBirthDate = prompt("Kérlek add meg az új születési dátumot (pld. 1999-01-01): ",birthDateCell.textContent);
+                const statusText = statusCell.textContent == 'Aktív' ? '1' :'0';
+                const newStatus = prompt("Kérlek add meg az új állapotot (1- aktív, 0-inaktív): ",statusText);
+                const newStatusBoolean = newStatus =='1' ? true : false;
+
+                if (newUserName && newUserEmail && newBirthDate){
+                    axios.put(`userEdit/${userId}`,{userName:newUserName,email:newUserEmail,birthDate:newBirthDate,status:newStatusBoolean})
+                    .then(response => {
+                        const data = response.data;
+                        alert(data.message);
+                        loadUsers();
+                    })
+                    .catch(error =>{
+                        console.error("Hiba történt...",error);
+                    });
+                } 
+
+
+
+            } else if (event.target.classList.contains('deleteBtn')){
+                const userId = event.target.getAttribute('data-id');
+
+                if (confirm('Biztosan törli a felhasználót?')) {
+                    axios.delete(`userDelete/${userId}`)
+                        .then(response =>{
+                            const data = response.data;
+                            alert(data.message);
+                            loadUsers();
+                        })
+                        .catch(error =>{
+                            console.error("Hiba történt...",error);
+                    });
+                }
+            }
+        });
+
+        loadUsers();
+    </script>
+</body>
+
+</html>

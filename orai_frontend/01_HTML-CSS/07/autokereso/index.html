@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autókereső</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <fieldset>
+        <legend>
+            <h1>Autókereső</h1>
+        </legend>
+        <form method="POST">
+            <label for="manufacturer">Gyártó*:</label>
+            <select name="manufacturer" id="manufacturer" size="3" autofocus>
+                <option value="bmw">BMW</option>
+                <option value="audi">Audi</option>
+                <option value="honda" selected>Honda</option>
+                <option value="saab">Saab</option>
+            </select>
+            <label for="type">Típusa*:</label>
+            <select name="type" id="type" disabled>
+                <option value="1">Személygépkocsi</option>
+                <option value="2">Teher</option>
+            </select>
+            <label for="fuelType">Üzemanyag típusa*:</label>
+            <select name="fuelType" id="fuelType" required>
+                <option value="">Kérem válasszon!!!</option>
+                <option value="1">Benzin</option>
+                <option value="2">Dízel</option>
+                <option value="3">Elektromos</option>
+                <option value="4">Egyéb</option>
+            </select>
+            <label for="colors">Színek (ctrl + bal egérgombbal többet is kiválaszthat)*:</label>
+            <select name="colors" id="colors" multiple required>
+                <option value="1">Fehér</option>
+                <option value="2">Kék</option>
+                <option value="3">Zöld</option>
+                <option value="4">Szürke</option>
+            </select>
+            <label for="priceMin">Ár minimum*:</label>
+            <input type="number" name="priceMin" id="priceMin" min="0" max="1000000000" step="1000" required>
+            <label for="priceMax">Ár maximum*:</label>
+            <input type="number" name="priceMax" id="priceMax" min="0" max="1000000000" step="1000" required>
+            <input class="btn-submit" type="submit" value="keres">
+        </form>
+    </fieldset>
+</body>
+</html>

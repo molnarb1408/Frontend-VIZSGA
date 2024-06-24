@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fv., eljárás gyakorlás</title>
+</head>
+
+<body>
+    <button id="feladat01" name="feladat01" onclick="calcPower()">Feladat01. - hatványozás</button>
+    <button id="feladat0201" name="feladat0201" onclick="alertPowerSumResult()">Feladat02/01. - Négyzet Összeg</button>
+    <button id="feladat0202" name="feladat0202" onclick="printToConsolePowerSumResult()">Feladat02/02 - Négyzet
+        Összeg</button>
+    <button id="feladat03" name="feladat03" onclick="alertSquareResult()">Feladat03 - Gyökszámítás</button>
+    <button id="feladat0601" name="feladat0601" onclick="alertAvgResult()">Feladat06/01. - átlagszámítás</button>
+    <button id="feladat0602" name="feladat0602" onclick="printToConsoleAvgResult()">Feladat06/02. -
+        átlagszámítás</button>
+    <button id="feladat07" name="feladat07" onclick="generateAndAlertDiceRole()">Feladat07 - kockadobás</button>
+    <button id="feladat08" name="feladat08" onclick="alertRandomNumber()">Feladat08 - véletlen szám </button>
+    <button id="feladat0901" name="feladat0901" onclick="printRandomArrayToUnorderedList()">Feladat09/01 - véletlen szám
+    </button>
+    <button id="feladat0902" name="feladat0902" onclick="printArrayToConsole(fillArrayRandomNumber())">Feladat09/02 -
+        véletlen szám </button>
+    <button id="feladat1001" name="feladat1001" onclick="printArrayToConsole(fillArrayByUserFromPrompt())">Feladat10/01
+        - Felhasználó tömbfeltöltés </button>
+    <button id="feladat1002" name="feladat1002" onclick="printFillArrayByUser()">Feladat10/02 - Felhasználó
+        tömbfeltöltés </button>
+    <button id="feladat1003" name="feladat1003" onclick="createInputFields(5)">Feladat10/03 - Felhasználó tömbfeltöltés
+    </button>
+
+    <fieldset>
+        <legend>Feladat04 - Bruttóár számítás</legend>
+        <label for="netPrice">Adja meg a nettó értéket:</label>
+        <input type="number" id="netPrice" min="0" name="netPrice" style="display:block" required>
+        <label for="tax">Adja meg az áfa kulcsot:</label>
+        <input type="number" id="tax" name="tax" min="0" style="display:block" required>
+        <button type="submit" onclick="printGrossPrice()">Számol</button>
+        <p id="resultGrossPrice"></p>
+    </fieldset>
+    <fieldset>
+        <legend>Feladat05 - Háromszög szerkeszthetőség</legend>
+        <label for="a">A oldal:</label>
+        <input type="number" id="a" min="0" style="display:block" required>
+        <label for="b">B oldal:</label>
+        <input type="number" id="b" min="0" style="display:block" required>
+        <label for="c">C oldal:</label>
+        <input type="number" id="c" min="0" style="display:block" required>
+        <button type="submit" onclick="printIsTriangleEditable()">Ellenőriz</button>
+        <p id="resultIsTriangleEditable"></p>
+    </fieldset>
+    
+    <!-- Feladat01: Hozzunk létre JS függvényt vagy eljárást, ami létrehoz annyi
+             label és input(number), amilyen paramétert megkap!
+            Feladat02: JS-el gyűjtsük be az adatokat egy tömbbe helyezzük-->
+    <!-- <label for="input1">1. szám: </label>
+        <input type="number" id="input1">
+        <label for="input2">2. szám: </label>
+        <input type="number" id="input2">
+        <label for="input3">3. szám: </label>
+        <input type="number" id="input3"> -->
+    <div id="inputContainer">
+        <!-- Ide fognak kerülni az újonnan létrehozott input mezők és címkék -->
+    </div>
+    <p id="formResult10"> <!-- A tömb elemei összefűzve --></p>
+
+    <div id="containerRandomNumberList">
+    </div>
+    <p id="result10"></p>
+    <script src="js/megoldasok.js"></script>
+</body>
+
+</html>
