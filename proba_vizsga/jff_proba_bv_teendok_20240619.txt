@@ -1,0 +1,6 @@
+Teendők a próbavizsgafeladat beadásával kapcsolatban:
+1. Hozzunk létre egy új repo-t: jff-2024-02-19-proba-bv-Teszt-Elek
+2. Ebbe a mappába töltsünk fel minden állományt kivéve a node_modules mappát!
+3. Osszuk meg a következő felhasználóval: blahutlorant
+4. Időkeret: 180 perc
+5. A fájlok között lévő teszteket érdemes megvizsgálni, de ne legyenek módosítva! 
