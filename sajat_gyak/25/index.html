@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="hu">
+
+<head>
+    <title>Függvény, eljárás feladatok</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body class="bg-dark-subtle">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-info fw-bold">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#" id="buttonTask0" onclick="setDefault(), changeImg()">Feladat leírások</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button> 
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link mx-2" target="_blank"
+                                href="https://github.com/molnarb1408/jff-feladatok-molnar-balint">Github.com/link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-2" target="_blank"
+                                href="game/game.html">Boss Rush</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Feladat választó
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#" id="buttonTask1" onclick="prepTask01()">Feladat 1</a></li>
+                                <li><a class="dropdown-item" href="#" id="buttonTask2" onclick="prepTask02()">Feladat 2</a></li>
+                                <li><a class="dropdown-item" href="#" id="buttonTask3" onclick="prepTask03()">Feladat 3</a></li>
+                                <li><a class="dropdown-item" href="#" id="buttonTask4" onclick="prepTask04()">Feladat 4</a></li>
+                                <li><a class="dropdown-item" href="#" id="buttonTask5" onclick="prepTask05()">Feladat 5</a></li>
+                                <li><a class="dropdown-item" href="#" id="buttonTask6" onclick="prepTask06()">Feladat 6</a></li>
+                                <li><a class="dropdown-item" href="#" id="buttonTask7" onclick="prepTask07()">Feladat 7</a></li>
+                                <li><a class="dropdown-item" href="#" id="buttonTask8" onclick="prepTask08()">Feladat 8</a></li>
+                                <li><a class="dropdown-item" href="#" id="buttonTask9" onclick="prepTask09()">Feladat 9</a></li>
+                                <li><a class="dropdown-item" href="#" id="buttonTask10" onclick="prepTask10()">Feladat 10</a></li>
+                                <li><a class="dropdown-item" href="#" id="buttonTask11" onclick="prepTask11()">Feladat 11</a></li>
+                                <li><a class="dropdown-item" href="#" id="buttonTask12" onclick="prepTask12()">Feladat 12</a></li>
+                                <li><a class="dropdown-item" href="#" id="buttonTask13" onclick="prepTask13()">Feladat 13</a></li>
+                                <li><a class="dropdown-item" href="#" id="buttonTask14" onclick="prepTask14()">Feladat 14</a></li>
+                                <li><a class="dropdown-item" href="#" id="buttonTask15" onclick="prepTask15()">Feladat 15</a></li>
+                                <li><a class="dropdown-item" href="#" id="buttonTask16" onclick="prepTask16()">Feladat 16</a></li>
+                                <li><a class="dropdown-item" href="#" id="buttonTask17" onclick="prepTask17()">Feladat 17</a></li>
+                                <li><a class="dropdown-item" href="#" id="buttonTask18" onclick="prepTask18()">Feladat 18</a></li>
+                                <li><a class="dropdown-item" href="#" id="buttonTask19" onclick="prepTask19()">Feladat 19</a></li>
+                                <li><a class="dropdown-item" href="#" id="buttonTask20" onclick="prepTask20()">Feladat 20</a></li>
+                            </ul>
+                        </li>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-fluid text-center pt-3">
+        <H2 class="text-bg-secondary p-3" id="displayTaskName">Függvény, eljárás feladatok</H2>
+        <p class="bg-body-secondary p-3" id="displayTask">
+            Függvények, eljárások segítségével oldjuk meg a következő feladatokat! <br>
+            A függvények/eljárások meghívására használjuk a gombok onclick eseményét! <br>
+            Az eredményt a HTML kimeneten, felugró ablakban vagy a console-on jelenítsük meg a feladatleírás szerint
+            (ha nincs meghatározva, akkor tetszőleges).<br>
+            A megjelenítéshez használjunk Bootstrap - et!
+        </p>
+        <img class="p-3" id="image" src="">
+        <p class="bg-body-tertiary p-3" id="displayTaskSolution">Feladatok helye!</p>
+    </main>
+
+    <!-- myScripts -->
+    <script src="js/displaySource.js"></script>
+    <script src="js/jsPrepTask.js"></script>
+    <script src="js/jsFvSolution.js"></script>
+    
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
