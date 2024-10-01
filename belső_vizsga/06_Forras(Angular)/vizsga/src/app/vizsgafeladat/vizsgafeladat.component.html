@@ -1,0 +1,20 @@
+<div class="container">
+    <h2>Angular modul megoldása</h2>
+    <form class="mb-3">
+        <label for="sulyInput" class="form-label">Add meg a súlyod kilógrammban:</label>
+        <input type="number" class="form-control" name="sulyInput" id="sulyInput" [(ngModel)]="testtomeg" />
+
+        <label for="magassagInput" class="form-label">Add meg a magasságod méterben:</label>
+        <input type="number" class="form-control" name="magassagInput" id="magassagInput" [(ngModel)]="magassag" />
+
+        <button (click)="EredmenyMentes()" type="button" class="form-control btn btn-success mt-2 mb-2">Eredmény
+            mentése</button>
+    </form>
+    <p>
+    <p *ngIf="eredmenyTTI !== undefined">
+        A megadott értékek alapján a testtömeg index: {{ eredmenyTTI }} </p>
+    <ul>
+        <li *ngFor="let log of logs">{{ log }}</li>
+    </ul>
+
+</div>
